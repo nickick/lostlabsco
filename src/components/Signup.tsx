@@ -40,6 +40,7 @@ const Signup = () => {
           }
         }
       }
+      /* eslint-disable  @typescript-eslint/no-explicit-any */
     } catch (error: any) {
       setError(error.message);
     } finally {

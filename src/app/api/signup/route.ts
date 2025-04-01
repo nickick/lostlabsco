@@ -1,5 +1,4 @@
 import mailchimp from "@mailchimp/mailchimp_marketing";
-import md5 from "md5";
 
 export async function POST(req: Request) {
   const { email_address, status } = await req.json();
@@ -9,9 +8,6 @@ export async function POST(req: Request) {
     apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY, //add yout API key here
     server: process.env.NEXT_PUBLIC_MAILCHIMP_SERVER_URL, //add server prefix here
   });
-
-  //Encrypt the email address using the MD5 hashing algorithm
-  const subscriberHash = md5(email_address.toLowerCase());
 
   // Set the Audience ID generated earlier to add email to that audience
   try {
@@ -28,6 +24,7 @@ export async function POST(req: Request) {
     return Response.json({
       message: `You've signed up! Check your email for updates from us soon!`,
     });
+    /* eslint-disable  @typescript-eslint/no-explicit-any */
   } catch (err: any) {
     console.log("Error:", err);
     const errorResponse = JSON.parse(err.response.text);

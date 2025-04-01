@@ -10,17 +10,17 @@ import Signup from "./Signup";
 import { TextAnimation } from "./TextAnimation";
 import { motion } from "framer-motion";
 
-const container = {
-  hidden: {
-    opacity: 0,
-  },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.025,
-    },
-  },
-};
+// const container = {
+//   hidden: {
+//     opacity: 0,
+//   },
+//   visible: {
+//     opacity: 1,
+//     transition: {
+//       staggerChildren: 0.025,
+//     },
+//   },
+// };
 
 const HighlightedSpan = ({ children }: { children: React.ReactNode }) => {
   return (
