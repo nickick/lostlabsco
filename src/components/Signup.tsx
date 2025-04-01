@@ -64,7 +64,7 @@ const Signup = () => {
           required
           name="email_address"
           onChange={(e) => setEmail(e.target.value)}
-          className="w-96 mx-8 md:mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900 text-center"
+          className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900 text-center"
           placeholder="Enter your email"
         />
 
@@ -72,11 +72,13 @@ const Signup = () => {
           type="submit"
           disabled={email === "" || isLoading}
           className={cn(
-            "w-96 mx-8 md:mx-auto bg-[#ffd804] text-black rounded-bl-md rounded-br-md py-3 px-4 flex gap-2 items-center justify-center cursor-pointer hover:bg-[#ffd804]/90 disabled:opacity-90 transition-all disabled:cursor-not-allowed",
+            "w-84 sm:w-96 md:mx-auto bg-[#ffd804] text-black rounded-bl-md rounded-br-md py-3 px-4 flex gap-2 items-center justify-center cursor-pointer hover:bg-[#ffd804]/90 disabled:opacity-90 transition-all disabled:cursor-not-allowed",
             advercaseRegular.className
           )}
         >
-          Join the 90 Day Launch Community
+          {subcriptionResponse
+            ? "Thank you!"
+            : "Join the 90 Day Launch Community"}
           {isLoading && <Spinner className="w-4 h-4" />}
         </button>
       </form>

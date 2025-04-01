@@ -1,3 +1,5 @@
+"use client";
+
 import {
   advercaseBold,
   advercaseRegular,
@@ -5,10 +7,29 @@ import {
 } from "@/app/font";
 import { cn } from "@/utils/cn";
 import Signup from "./Signup";
+import { TextAnimation } from "./TextAnimation";
+import { motion } from "framer-motion";
+
+const container = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      staggerChildren: 0.025,
+    },
+  },
+};
 
 const HighlightedSpan = ({ children }: { children: React.ReactNode }) => {
   return (
-    <span className={cn(advercaseRegular.className, "text-(--accent)")}>
+    <span
+      className={cn(
+        advercaseRegular.className,
+        "text-(--accent) drop-shadow-[0_0_1px_var(--accent)]"
+      )}
+    >
       {children}
     </span>
   );
@@ -23,16 +44,20 @@ const Hero = () => {
           "font-bold flex flex-col items-center w-full"
         )}
       >
-        <span className="text-3xl">Join our</span>
-        <span className="text-[3rem] text-(--accent) drop-shadow-[0_0_3px_var(--accent)]">
-          90 Day Launch
-        </span>
-        <span className="text-3xl">Newsletter</span>
+        <TextAnimation className="text-3xl" text="Join our" />
+        <TextAnimation
+          className="text-[2.5rem] sm:text-[3rem] text-(--accent) drop-shadow-[0_0_3px_var(--accent)] relative bottom-1"
+          text="90 Day Launch"
+        />
+        <TextAnimation
+          className="text-3xl relative bottom-3"
+          text="Newsletter"
+        />
       </h1>
-      <div
+      <motion.div
         className={cn(
           hostGroteskRegular.className,
-          "flex flex-col gap-4 w-full md:w-1/2 mx-auto"
+          "flex flex-col gap-4 w-full md:w-1/2 px-3 text-center sm:text-left sm:mx-auto"
         )}
       >
         <p>
@@ -47,8 +72,10 @@ const Hero = () => {
           newsletter for you. We&apos;ll be sharing behind-the-scenes updates,
           guides and more.
         </p>
-      </div>
-      <Signup />
+      </motion.div>
+      <motion.div className="flex w-full justify-center">
+        <Signup />
+      </motion.div>
     </div>
   );
 };
