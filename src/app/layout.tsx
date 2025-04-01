@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-
+import { Footer } from "@/componets/Footer";
+import { Navbar } from "@/componets/Navbar";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -11,6 +12,16 @@ const geistMono = localFont({
   src: "./fonts/GeistMonoVF.woff",
   variable: "--font-geist-mono",
   weight: "100 900",
+});
+export const advercaseRegular = localFont({
+  src: "./fonts/Advercase-Regular.woff",
+  variable: "--font-advercase-regular",
+  weight: "400",
+});
+export const advercaseBold = localFont({
+  src: "./fonts/Advercase-Bold.woff",
+  variable: "--font-advercase-bold",
+  weight: "700",
 });
 
 export const metadata: Metadata = {
@@ -26,9 +37,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} ${advercaseRegular.variable} ${advercaseBold.variable} antialiased`}
       >
+        <Navbar />
         {children}
+        <Footer />
       </body>
     </html>
   );
