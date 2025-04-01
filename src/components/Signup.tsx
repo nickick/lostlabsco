@@ -11,7 +11,7 @@ const Signup = () => {
   const [error, setError] = useState<string>();
   const [subcriptionResponse, setSubcriptionResponse] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  //handle form submit
+
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(undefined);
