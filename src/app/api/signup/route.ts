@@ -5,15 +5,15 @@ export async function POST(req: Request) {
 
   // Set the mailchimp config with your API key and server prefix
   mailchimp.setConfig({
-    apiKey: process.env.NEXT_PUBLIC_MAILCHIMP_API_KEY, //add yout API key here
-    server: process.env.NEXT_PUBLIC_MAILCHIMP_SERVER_URL, //add server prefix here
+    apiKey: process.env.MAILCHIMP_API_KEY, //add yout API key here
+    server: process.env.MAILCHIMP_SERVER_URL, //add server prefix here
   });
 
   // Set the Audience ID generated earlier to add email to that audience
   try {
     // Then try to add the member
     await mailchimp.lists.addListMember(
-      process.env.NEXT_PUBLIC_MAILCHIMP_LIST_ID as string, // add your audience ID here
+      process.env.MAILCHIMP_LIST_ID as string, // add your audience ID here
       {
         email_address,
         status: status,
