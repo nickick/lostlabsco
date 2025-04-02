@@ -32,7 +32,7 @@ export const POST = async (request: NextRequest) => {
         from: `"nick@yesand.tech" <nick+logosubmissions@yesand.tech>`,
         to: "nick+logosubmissions@yesand.tech", // list of receivers
         subject: "New submission from " + name, // Subject
-        text: "New submission from" + email, // plain text body
+        text: "New submission from " + email, // plain text body
         attachments: [
           {
             filename: "submission.png",
