@@ -8,7 +8,7 @@ declare module "react-canvas-draw" {
   /* eslint-disable  @typescript-eslint/no-explicit-any */
   export default class CanvasDraw extends Component<any> {
     undo(): void;
-    clear(): void;
+    eraseAll(): void;
   }
 }
 
@@ -23,7 +23,7 @@ const Canvas = () => {
   };
 
   const handleClear = () => {
-    canvasRef.current?.clear();
+    canvasRef.current?.eraseAll();
   };
 
   return (
