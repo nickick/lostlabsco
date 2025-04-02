@@ -10,7 +10,7 @@ import Signup from "./Signup";
 import { TextAnimation } from "./TextAnimation";
 
 const Hero = () => {
-  const [hasSubscribed, setHasSubscribed] = useState(true);
+  const [hasSubscribed, setHasSubscribed] = useState(false);
 
   return (
     <div className="min-h-[calc(100svh-8rem)] flex flex-col gap-0 row-start-2 items-center justify-center sm:items-start relative z-20 pb-12">
