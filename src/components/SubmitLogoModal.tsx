@@ -5,7 +5,7 @@ import { Modal } from "./Modal";
 import { useLocalStorage } from "usehooks-ts";
 import Signup from "./Signup";
 import { cn } from "@/utils/cn";
-
+import { Spinner } from "./Spinner";
 function SubmitLogoModal({
   button,
   onSubmit,
@@ -26,10 +26,11 @@ function SubmitLogoModal({
   }, [signedEmail, hasSubscribed]);
 
   useEffect(() => {
-    if (signedName && signedEmail) {
+    if (signedName && signedEmail && open) {
       setOpen(false);
+      onSubmit();
     }
-  }, [signedName, signedEmail]);
+  }, [signedName, signedEmail, open]);
 
   const handleOpen = () => {
     if (signedEmail && signedName) {
@@ -39,6 +40,8 @@ function SubmitLogoModal({
       setOpen(true);
     }
   };
+
+  const [submitting, setSubmitting] = useState(false);
 
   return (
     <>
@@ -63,8 +66,7 @@ function SubmitLogoModal({
               onSubmit={(e) => {
                 e.preventDefault();
                 setSignedName(name);
-                setOpen(false);
-                onSubmit();
+                setSubmitting(true);
               }}
             >
               <input
@@ -75,12 +77,14 @@ function SubmitLogoModal({
               />
               <button
                 type="submit"
+                disabled={submitting}
                 className={cn(
                   "w-84 sm:w-96 mx-auto rounded-bl-md rounded-br-md py-3 px-4 flex gap-2 items-center justify-center cursor-pointer  disabled:opacity-90 transition-all disabled:cursor-not-allowed",
-                  "bg-(--accent) text-black hover:bg-[#ffd804]/90"
+                  "bg-(--accent) text-black hover:bg-[#ffd804]/90 disabled:bg-gray-500"
                 )}
               >
-                Submit
+                {submitting ? "Submitting..." : "Submit"}
+                {submitting && <Spinner className="w-4 h-4" />}
               </button>
             </form>
           </div>

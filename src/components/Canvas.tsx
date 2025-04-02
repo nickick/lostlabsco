@@ -39,7 +39,11 @@ const Canvas = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
+    console.log(signedEmail, signedName);
     try {
+      if (!signedEmail || !signedName) {
+        return;
+      }
       const response = await fetch("/api/submit", {
         method: "POST",
         body: JSON.stringify({
