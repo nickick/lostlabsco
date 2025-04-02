@@ -9,16 +9,12 @@ function BackgroundLeaves({
 }) {
   return (
     <div
-      className={cn(
-        "absolute inset-0 w-full h-full mix-blend-lighten",
-        className
-      )}
+      className={cn("absolute mix-blend-lighten", className)}
       style={{
         backgroundImage: `url(${imgSrc})`,
-        backgroundSize: "cover",
+        backgroundSize: "contain",
         backgroundPosition: "center",
-        maskImage:
-          "radial-gradient(circle, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 20%, transparent 60%, transparent 100%);",
+        backgroundRepeat: "no-repeat",
       }}
     />
   );
