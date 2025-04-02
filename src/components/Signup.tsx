@@ -4,6 +4,8 @@ import { advercaseRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 import { Spinner } from "./Spinner";
+import Link from "next/link";
+import { HighlightedSpan } from "./HighlightedSpan";
 
 const Signup = () => {
   //set up state to hold email and response
@@ -48,7 +50,7 @@ const Signup = () => {
     }
   };
   return (
-    <div className="w-full flex justify-center">
+    <div className="w-full flex flex-col gap-4 justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col">
         {error && (
           <p className="text-red-500 text-center mb-2 w-full">{error}</p>
@@ -65,7 +67,7 @@ const Signup = () => {
           required
           name="email_address"
           onChange={(e) => setEmail(e.target.value)}
-          className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900 text-center"
+          className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900"
           placeholder="Enter your email"
         />
 
@@ -77,12 +79,25 @@ const Signup = () => {
             advercaseRegular.className
           )}
         >
-          {subcriptionResponse
-            ? "Thank you!"
-            : "Join the 90 Day Launch Community"}
+          {subcriptionResponse ? "Thank you!" : "Join the community"}
           {isLoading && <Spinner className="w-4 h-4" />}
         </button>
       </form>
+      {subcriptionResponse && (
+        <p className="w-84 sm:w-96 mx-auto text-center">
+          Thanks for joining! We&apos;re building a hardware business in 90
+          days, and we&apos;re building it{" "}
+          <HighlightedSpan className="text-sm">with you</HighlightedSpan>. Want
+          to{" "}
+          <Link
+            href="/submit"
+            className="text-(--accent) border-b border-b-(--accent) hover:text-(--accent)/90 transition-all"
+          >
+            submit a logo design
+          </Link>
+          ?
+        </p>
+      )}
     </div>
   );
 };

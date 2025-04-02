@@ -9,6 +9,8 @@ import { cn } from "@/utils/cn";
 import Signup from "./Signup";
 import { TextAnimation } from "./TextAnimation";
 import { motion } from "framer-motion";
+import Link from "next/link";
+import { HighlightedSpan } from "./HighlightedSpan";
 
 // const container = {
 //   hidden: {
@@ -22,22 +24,9 @@ import { motion } from "framer-motion";
 //   },
 // };
 
-const HighlightedSpan = ({ children }: { children: React.ReactNode }) => {
-  return (
-    <span
-      className={cn(
-        advercaseRegular.className,
-        "text-(--accent) drop-shadow-[0_0_1px_var(--accent)]"
-      )}
-    >
-      {children}
-    </span>
-  );
-};
-
 const Hero = () => {
   return (
-    <div className="min-h-[calc(100svh-8rem)] flex flex-col gap-4 row-start-2 items-center justify-center sm:items-start">
+    <div className="min-h-[calc(100svh-8rem)] flex flex-col gap-0 row-start-2 items-center justify-center sm:items-start">
       <h1
         className={cn(
           advercaseBold.className,
@@ -50,10 +39,37 @@ const Hero = () => {
           text="90 Day Launch"
         />
         <TextAnimation
-          className="text-3xl relative bottom-3"
-          text="Newsletter"
+          className="text-3xl relative bottom-4"
+          text="Community"
         />
       </h1>
+      <motion.div
+        className={cn(
+          hostGroteskRegular.className,
+          "flex flex-col gap-4 w-full md:w-1/2 lg:w-1/3 px-3 sm:mx-auto"
+        )}
+      >
+        <p className="w-full">
+          This is the{" "}
+          <HighlightedSpan>Million or Bust Challenge</HighlightedSpan>:
+        </p>
+        <ul className="list-disc list-inside">
+          <li>Invent a new hardware product</li>
+          <li>Turn the concept into a real product</li>
+          <li>
+            Sell <HighlightedSpan>$1 MILLION</HighlightedSpan> in preorders
+          </li>
+          <li>Begin shipping to customers</li>
+        </ul>
+        <p className="w-full">
+          <HighlightedSpan className={"uppercase"}>
+            all in 90 days.
+          </HighlightedSpan>
+        </p>
+      </motion.div>
+      <motion.div className="flex w-full justify-center mb-6">
+        <Signup />
+      </motion.div>
       <motion.div
         className={cn(
           hostGroteskRegular.className,
@@ -61,20 +77,11 @@ const Hero = () => {
         )}
       >
         <p>
-          <HighlightedSpan>Million or Bust Challenge</HighlightedSpan>: invent a
-          new hardware product, sell{" "}
-          <HighlightedSpan>$1 MILLION</HighlightedSpan> in preorders, and ship
-          to customers, <HighlightedSpan>all in 90 days</HighlightedSpan>.
-        </p>
-        <p>
           If you&apos;re an entrepreneur, aspiring to be one, or just excited to
           watch a business get launched FAST, we made our 90 Day Launch
           newsletter for you. We&apos;ll be sharing behind-the-scenes updates,
           guides and more.
         </p>
-      </motion.div>
-      <motion.div className="flex w-full justify-center">
-        <Signup />
       </motion.div>
     </div>
   );
