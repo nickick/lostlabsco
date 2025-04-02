@@ -28,13 +28,21 @@ function SubmitLogoModal({
   useEffect(() => {
     if (signedName && signedEmail) {
       setOpen(false);
-      onSubmit();
     }
   }, [signedName, signedEmail]);
 
+  const handleOpen = () => {
+    if (signedEmail && signedName) {
+      setOpen(false);
+      onSubmit();
+    } else {
+      setOpen(true);
+    }
+  };
+
   return (
     <>
-      <button onClick={() => setOpen(true)}>{button}</button>
+      <div onClick={handleOpen}>{button}</div>
       <Modal open={open} setOpen={setOpen}>
         {!signedEmail && (
           <div className="flex flex-col gap-0 justify-center items-center mb-4">

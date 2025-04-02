@@ -29,10 +29,10 @@ export const POST = async (request: NextRequest) => {
 
     await transporter
       .sendMail({
-        from: `"${name}" <${email}>`,
+        from: `"nick@yesand.tech" <nick+logosubmissions@yesand.tech>`,
         to: "nick+logosubmissions@yesand.tech", // list of receivers
         subject: "New submission from " + name, // Subject
-        text: "New submission", // plain text body
+        text: "New submission from" + email, // plain text body
         attachments: [
           {
             filename: "submission.png",
