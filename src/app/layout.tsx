@@ -33,11 +33,7 @@ export default function RootLayout({
         <div className="w-full h-full relative">
           <BackgroundLeaves
             imgSrc="/dark-leaves-2.jpg"
-            className="hidden sm:block opacity-30 bottom-[20%] -right-[10%]  w-1/2 h-1/2 scale-x-[-1] rotate-90"
-          />
-          <BackgroundLeaves
-            imgSrc="/dark-leaves-2.jpg"
-            className="hidden sm:block opacity-30 bottom-[20%] -left-[10%] w-1/2 h-1/2 rotate-270"
+            className="opacity-20 -top-[30%] sm:top-0 left-1/2 -translate-x-1/2  w-3/4 h-full"
           />
           <Navbar />
           {children}
