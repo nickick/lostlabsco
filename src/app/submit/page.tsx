@@ -1,15 +1,15 @@
 "use client";
 
-import { Canvas } from "@/components/Canvas";
-import { cn } from "@/utils/cn";
 import { advercaseRegular, hostGroteskRegular } from "@/app/font";
+import { Canvas } from "@/components/Canvas";
 import { HighlightedSpan } from "@/components/HighlightedSpan";
+import { cn } from "@/utils/cn";
 
 const Submit = () => {
   return (
     <main
       className={cn(
-        "w-full max-w-screen-xl mx-auto px-4 relative min-h-[calc(100svh-8rem)] flex flex-col gap-0 justify-center items-center font-sans",
+        "w-full max-w-screen-xl mx-auto px-4 relative min-h-[calc(100svh-8rem)] flex flex-col gap-0 justify-center items-center font-sans pt-12 md:pt-0",
         hostGroteskRegular.className
       )}
     >

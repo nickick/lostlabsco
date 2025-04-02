@@ -2,8 +2,9 @@
 
 import { advercaseRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Spinner } from "./Spinner";
+import { useLocalStorage } from "usehooks-ts";
 
 const Signup = ({
   hasSubscribed,
@@ -16,6 +17,14 @@ const Signup = ({
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [signedEmail, setSignedEmail] = useLocalStorage("signed-up-email", "");
+
+  useEffect(() => {
+    if (signedEmail && !hasSubscribed) {
+      setHasSubscribed(true);
+    }
+  }, [signedEmail, hasSubscribed]);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -34,9 +43,11 @@ const Signup = ({
       });
       if (response.ok && response.statusText !== "Member Exists") {
         setHasSubscribed(true);
+        setSignedEmail(email);
         setEmail("");
       } else {
         if (response.statusText === "Member Exists") {
+          setSignedEmail(email);
           setError("You've already subscribed!");
         } else if (response.status === 400) {
           setError("An error occurred, please try again.");

@@ -1,11 +1,11 @@
 import { cn } from "@/utils/cn";
-import { advercaseBold } from "@/app/font";
+import { advercaseBold, hostGroteskRegular } from "@/app/font";
 import Link from "next/link";
 
 const Navbar = () => {
   return (
     <nav className="w-full flex justify-between items-center max-w-screen-xl mx-auto py-8">
-      <div className="px-4 md:px-8">
+      <div className="px-8">
         <Link
           className={cn(
             "text-center text-sm text-(--accent)",
@@ -18,7 +18,9 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
-      <div className="px-4 md:px-8">About</div>
+      <div className={cn("px-8", hostGroteskRegular.className)}>
+        <Link href="/submit">Draw</Link>
+      </div>
     </nav>
   );
 };
