@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
+import { BackgroundLeaves } from "@/components/BackgroundLeaves";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -27,8 +28,16 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
       >
+        <BackgroundLeaves
+          imgSrc="/dark-leaves.jpg"
+          className="hidden sm:block left-1/2 rotate-180"
+        />
+        <BackgroundLeaves
+          imgSrc="/dark-leaves-2.jpg"
+          className="hidden sm:block -left-[50%] rotate-180"
+        />
         <Navbar />
         {children}
         <Footer />

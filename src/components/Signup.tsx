@@ -4,10 +4,14 @@ import { advercaseRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
 import { useState } from "react";
 import { Spinner } from "./Spinner";
-import Link from "next/link";
-import { HighlightedSpan } from "./HighlightedSpan";
 
-const Signup = () => {
+const Signup = ({
+  hasSubscribed,
+  setHasSubscribed,
+}: {
+  hasSubscribed: boolean;
+  setHasSubscribed: (hasSubscribed: boolean) => void;
+}) => {
   //set up state to hold email and response
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>();
@@ -32,7 +36,7 @@ const Signup = () => {
       });
       if (response.ok) {
         const signup = await response.json();
-
+        setHasSubscribed(true);
         setEmail("");
         setSubcriptionResponse(signup.message);
       } else {
@@ -53,51 +57,37 @@ const Signup = () => {
     <div className="w-full flex flex-col gap-4 justify-center">
       <form onSubmit={handleSubmit} className="flex flex-col">
         {error && (
-          <p className="text-red-500 text-center mb-2 w-full">{error}</p>
-        )}
-        {subcriptionResponse && (
-          <p className="text-green-500 text-center mb-2 w-full">
-            {subcriptionResponse}
+          <p className="w-84 sm:w-96 mx-auto text-left text-red-500 mb-2">
+            {error}
           </p>
         )}
-        {!subcriptionResponse && !error && <div className="h-6"></div>}
-        <input
-          type="email"
-          value={email}
-          required
-          name="email_address"
-          onChange={(e) => setEmail(e.target.value)}
-          className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900"
-          placeholder="Enter your email"
-        />
+        {!error && <div className="h-6"></div>}
+        {!hasSubscribed && (
+          <input
+            type="email"
+            value={email}
+            required
+            name="email_address"
+            onChange={(e) => setEmail(e.target.value)}
+            className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900"
+            placeholder="Enter your email"
+          />
+        )}
 
         <button
           type="submit"
-          disabled={email === "" || isLoading}
+          disabled={email === "" || isLoading || hasSubscribed}
           className={cn(
-            "w-84 sm:w-96 md:mx-auto bg-[#ffd804] text-black rounded-bl-md rounded-br-md py-3 px-4 flex gap-2 items-center justify-center cursor-pointer hover:bg-[#ffd804]/90 disabled:opacity-90 transition-all disabled:cursor-not-allowed",
+            "w-84 sm:w-96 mx-auto rounded-bl-md rounded-br-md py-3 px-4 flex gap-2 items-center justify-center cursor-pointer  disabled:opacity-90 transition-all disabled:cursor-not-allowed",
+            hasSubscribed && "rounded-md border-(--accent) border-2 text-white",
+            !hasSubscribed && "bg-(--accent) text-black hover:bg-[#ffd804]/90",
             advercaseRegular.className
           )}
         >
-          {subcriptionResponse ? "Thank you!" : "Join the community"}
+          {hasSubscribed ? "Thanks for joining!" : "Join the community"}
           {isLoading && <Spinner className="w-4 h-4" />}
         </button>
       </form>
-      {subcriptionResponse && (
-        <p className="w-84 sm:w-96 mx-auto text-center">
-          Thanks for joining! We&apos;re building a hardware business in 90
-          days, and we&apos;re building it{" "}
-          <HighlightedSpan className="text-sm">with you</HighlightedSpan>. Want
-          to{" "}
-          <Link
-            href="/submit"
-            className="text-(--accent) border-b border-b-(--accent) hover:text-(--accent)/90 transition-all"
-          >
-            submit a logo design
-          </Link>
-          ?
-        </p>
-      )}
     </div>
   );
 };
