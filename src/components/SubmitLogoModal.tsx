@@ -55,7 +55,7 @@ function SubmitLogoModal({
             />
           </div>
         )}
-        {!signedName && (
+        {signedEmail && !signedName && (
           <div className="flex flex-col gap-4 justify-center items-center mb-4">
             Last step: what&apos;s your name/social handle? We&apos;ll give you
             a shout out if we pick your logo!
@@ -63,11 +63,13 @@ function SubmitLogoModal({
               onSubmit={(e) => {
                 e.preventDefault();
                 setSignedName(name);
+                setOpen(false);
+                onSubmit();
               }}
             >
               <input
                 type="text"
-                placeholder="Name"
+                placeholder="@username"
                 className="w-84 sm:w-96 mx-auto border-2 border-gray-300 rounded-tl-md rounded-tr-md p-2 bg-white text-gray-900"
                 onChange={(e) => setName(e.target.value)}
               />
