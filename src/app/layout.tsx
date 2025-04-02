@@ -32,8 +32,8 @@ export default function RootLayout({
       >
         <div className="w-full h-full relative">
           <BackgroundLeaves
-            imgSrc="/dark-leaves-1.jpg"
-            className="hidden sm:block bottom-[30%] right-0  w-1/2 h-1/2"
+            imgSrc="/dark-leaves-2.jpg"
+            className="hidden sm:block bottom-[20%] -right-[10%]  w-1/2 h-1/2 scale-x-[-1] rotate-90"
           />
           <BackgroundLeaves
             imgSrc="/dark-leaves-2.jpg"
