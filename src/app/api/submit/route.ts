@@ -41,7 +41,12 @@ export const POST = async (request: NextRequest) => {
           },
         ],
       })
-      .catch(console.error);
+      .catch((error) => {
+        throw new Error(error);
+      });
     return NextResponse.json({ message: "Image received" });
-  } catch {}
+  } catch (error) {
+    console.error(error);
+    return NextResponse.json({ message: "Error submitting image" });
+  }
 };
