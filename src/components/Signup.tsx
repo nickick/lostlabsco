@@ -15,13 +15,11 @@ const Signup = ({
   //set up state to hold email and response
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>();
-  const [subcriptionResponse, setSubcriptionResponse] = useState<string>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setError(undefined);
-    setSubcriptionResponse(undefined);
     setIsLoading(true);
     try {
       const response = await fetch("/api/signup", {
@@ -35,10 +33,8 @@ const Signup = ({
         }),
       });
       if (response.ok) {
-        const signup = await response.json();
         setHasSubscribed(true);
         setEmail("");
-        setSubcriptionResponse(signup.message);
       } else {
         if (response.status === 400) {
           if (response.statusText === "Member Exists") {

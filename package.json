@@ -12,13 +12,19 @@
     "@mailchimp/mailchimp_marketing": "^3.0.80",
     "@types/mailchimp__mailchimp_marketing": "^3.0.21",
     "@types/md5": "^2.3.5",
+    "@types/react-canvas-draw": "^1.2.4",
+    "@types/react-color": "^3.0.13",
     "clsx": "^2.1.1",
     "framer-motion": "^12.6.3",
+    "lucide-react": "^0.487.0",
     "md5": "^2.3.0",
     "next": "14.2.25",
     "react": "^18",
+    "react-canvas-draw": "^1.2.1",
+    "react-color": "^2.19.3",
     "react-dom": "^18",
-    "tailwind-merge": "^3.1.0"
+    "tailwind-merge": "^3.1.0",
+    "usehooks-ts": "^3.1.1"
   },
   "devDependencies": {
     "@tailwindcss/postcss": "^4.0.17",
