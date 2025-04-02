@@ -32,14 +32,14 @@ const Signup = ({
           status: "subscribed",
         }),
       });
-      if (response.ok) {
+      if (response.ok && response.statusText !== "Member Exists") {
         setHasSubscribed(true);
         setEmail("");
       } else {
-        if (response.status === 400) {
-          if (response.statusText === "Member Exists") {
-            setError("You've already subscribed!");
-          }
+        if (response.statusText === "Member Exists") {
+          setError("You've already subscribed!");
+        } else if (response.status === 400) {
+          setError("An error occurred, please try again.");
         }
       }
       /* eslint-disable  @typescript-eslint/no-explicit-any */

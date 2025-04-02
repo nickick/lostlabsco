@@ -30,7 +30,6 @@ export async function POST(req: Request) {
     const errorResponse = JSON.parse(err.response.text);
     return new Response(null, {
       statusText: errorResponse.title,
-      status: err.status || 500,
     });
   }
 }
