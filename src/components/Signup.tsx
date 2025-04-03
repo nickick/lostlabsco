@@ -5,6 +5,7 @@ import { cn } from "@/utils/cn";
 import { useEffect, useState } from "react";
 import { Spinner } from "./Spinner";
 import { useLocalStorage } from "usehooks-ts";
+import { amplitude } from "./AnalyticsProvider";
 
 const Signup = ({
   hasSubscribed,
@@ -45,6 +46,7 @@ const Signup = ({
         setHasSubscribed(true);
         setSignedEmail(email);
         setEmail("");
+        amplitude.track("signup", { email });
       } else {
         if (response.statusText === "Member Exists") {
           setSignedEmail(email);
