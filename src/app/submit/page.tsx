@@ -2,7 +2,7 @@
 
 import { advercaseRegular, hostGroteskRegular } from "@/app/font";
 import { Canvas } from "@/components/Canvas";
-import { HighlightedSpan } from "@/components/HighlightedSpan";
+import { HighlightedSpan } from "@/components/Text";
 import { cn } from "@/utils/cn";
 
 const Submit = () => {

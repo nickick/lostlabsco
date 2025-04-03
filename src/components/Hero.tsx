@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
-import { HighlightedSpan } from "./HighlightedSpan";
+import { HighlightedLink, HighlightedSpan } from "./Text";
 import Signup from "./Signup";
 import { TextAnimation } from "./TextAnimation";
 
@@ -92,16 +92,26 @@ const Hero = () => {
         </p>
         <ul className="list-disc list-inside">
           <li>
-            Social Media and Marketing Strategy with Lost LeBlanc (The
-            strategies Christian has used to earn millions)
+            Social Media and Marketing Strategy with{" "}
+            <HighlightedLink href="https://www.youtube.com/Lostleblanc">
+              Lost LeBlanc
+            </HighlightedLink>{" "}
+            (The strategies Christian has used to earn millions)
           </li>
           <li>
-            Product & Manufacturing Blueprints with Jer (How he designs $100M+
-            of hardware products)
+            Product & Manufacturing Blueprints with{" "}
+            <HighlightedLink href="https://www.linkedin.com/in/jkuempel">
+              Jer
+            </HighlightedLink>{" "}
+            (How he designs $100M+ of hardware products)
           </li>
           <li>
-            E-comm Deep Dives with Nick (The tactics used for $6M+ in NFT sales
-            for Patrick Mahomes and major eCommerce platforms)
+            E-comm Deep Dives with{" "}
+            <HighlightedLink href="https://www.linkedin.com/in/nickhong">
+              Nick
+            </HighlightedLink>{" "}
+            (The tactics used for $6M+ in NFT sales for Patrick Mahomes and
+            major eCommerce platforms)
           </li>
         </ul>
       </motion.div>
