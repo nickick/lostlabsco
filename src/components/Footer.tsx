@@ -6,7 +6,7 @@ const Footer = () => {
     <footer
       className={cn(
         hostGroteskRegular.className,
-        "row-start-3 flex gap-6 flex-wrap items-center justify-center py-8 relative z-20"
+        "row-start-3 flex flex-col md:flex-row md:gap-6 flex-wrap items-center justify-center py-8 relative z-20"
       )}
     >
       <p className="text-center text-sm">
