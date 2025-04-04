@@ -53,7 +53,7 @@ const Versatile = () => {
       id="versatile"
     >
       <div className="flex flex-col items-center justify-center px-4 md:pb-16 mb-16 md:mt-0">
-        <div className="flex flex-col items-center justify-center py-8 gap-4 px-8 xl:px-0">
+        <div className="flex flex-col md:items-center md:justify-center py-8 gap-4 px-4 md:px-8 xl:px-0">
           <h2 className={cn("text-3xl ", advercaseBold.className)}>
             The most{" "}
             <span className="text-(--accent) drop-shadow-[0_0_2px_var(--accent)]">

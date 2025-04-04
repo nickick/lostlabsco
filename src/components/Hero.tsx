@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { HighlightedLink, HighlightedSpan } from "./Text";
-import Signup from "./Signup";
+import { Signup } from "./Signup";
 import { TextAnimation } from "./TextAnimation";
 
 const Hero = () => {

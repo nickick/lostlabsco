@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import { Modal } from "./Modal";
 import { useLocalStorage } from "usehooks-ts";
-import Signup from "./Signup";
+import { Signup } from "./Signup";
 import { cn } from "@/utils/cn";
 import { Spinner } from "./Spinner";
 function SubmitLogoModal({

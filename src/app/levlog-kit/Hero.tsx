@@ -4,6 +4,8 @@ import { cn } from "@/utils/cn";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import { Signup } from "@/components/Signup";
+import { useState } from "react";
 
 function HighlightLink({
   children,
@@ -31,55 +33,93 @@ function HighlightLink({
 }
 
 function LeVlogHero() {
+  const [hasSubscribed, setHasSubscribed] = useState(false);
   return (
     <div
       className={cn(
-        "flex flex-col md:flex-row items-center justify-center max-w-screen-lg mx-auto h-[calc(100vh-100px)] gap-12 px-8 relative z-20",
+        "flex flex-col items-center justify-center max-w-screen-lg mx-auto h-[calc(100vh-100px)] gap-8 md:px-8 relative z-20",
         hostGroteskRegular.className
       )}
     >
-      <motion.div
-        initial={{ opacity: 0, x: -100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="w-1/2 relative flex flex-col justify-end"
-      >
-        <video autoPlay muted loop playsInline className="w-full h-full">
-          <source src="/vlog/renders/full-modes.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-center justify-center"></div>
-        {/* <div className="absolute w-full bottom-4 text-white text-center">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-12">
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="w-full md:w-1/2 relative flex flex-col justify-end"
+        >
+          <video autoPlay muted loop playsInline className="w-full h-full">
+            <source src="/vlog/renders/full-modes.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-center justify-center"></div>
+          {/* <div className="absolute w-full bottom-4 text-white text-center">
           <h2 className="text-2xl font-bold">LeVlog Kit</h2>
         </div> */}
-        <p className="absolute text-xs bottom-0 left-0 w-full text-center">
-          Prototype renders, currently designing final product.
-        </p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, x: 100 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 1, ease: "easeInOut" }}
-        className="flex flex-col gap-4 items-start w-1/2"
-      >
-        <span className={cn("text-xl")}>Introducing the</span>
-        <h1
-          className={cn(
-            "text-5xl font-bold text-center text-(--accent) drop-shadow-[0_0_2px_var(--accent)]",
-            advercaseBold.className
-          )}
+          <p className="absolute text-xs bottom-0 left-0 w-full text-center">
+            Prototype renders, currently designing final product.
+          </p>
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 100 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 1, ease: "easeInOut" }}
+          className="flex flex-col gap-4 items-start w-full md:w-1/2 px-8 md:px-0"
         >
-          LeVlog Kit
-        </h1>
-        <div className={cn("text-xl", advercaseBold.className)}>
-          The all-in-one phone vlogging accessory made for the digital nomad
-        </div>
-        <div className={cn("text-xl")}>
-          A{" "}
-          <HighlightLink href="/levlog-kit/#versatile">versatile</HighlightLink>
-          , <HighlightLink href="/levlog-kit/#compact">compact</HighlightLink>,{" "}
-          <HighlightLink href="/levlog-kit/#premium">premium</HighlightLink>{" "}
-          phone tripod and accessories kit that lets digital nomads capture
-          their adventures.
+          <span className={cn("text-xl")}>Introducing the</span>
+          <h1
+            className={cn(
+              "text-5xl font-bold text-center text-(--accent) drop-shadow-[0_0_2px_var(--accent)]",
+              advercaseBold.className
+            )}
+          >
+            LeVlog Kit
+          </h1>
+          <div className={cn("text-xl", advercaseBold.className)}>
+            The all-in-one phone vlogging accessory made for the digital nomad
+          </div>
+          <div className={cn("text-xl")}>
+            A{" "}
+            <HighlightLink href="/levlog-kit/#versatile">
+              versatile
+            </HighlightLink>
+            , <HighlightLink href="/levlog-kit/#compact">compact</HighlightLink>
+            , <HighlightLink href="/levlog-kit/#premium">premium</HighlightLink>{" "}
+            phone tripod and accessories kit that lets digital nomads capture
+            their adventures.
+          </div>
+        </motion.div>
+      </div>
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+      >
+        <div className="flex flex-col items-center justify-center gap-0 mt-6">
+          <div>
+            {!hasSubscribed && (
+              <div>
+                Join our 90 day launch community to get updates on the LeVlog
+                Kit!
+              </div>
+            )}
+          </div>
+          <Signup
+            hasSubscribed={hasSubscribed}
+            setHasSubscribed={setHasSubscribed}
+          />
+          {hasSubscribed && (
+            <div className="pt-4">
+              Want to{" "}
+              <Link
+                href="/submit"
+                target="_blank"
+                className="underline text-(--accent) hover:text-(--accent)/90 transition-colors duration-300"
+              >
+                design us a logo
+              </Link>{" "}
+              with us next?
+            </div>
+          )}
         </div>
       </motion.div>
     </div>
