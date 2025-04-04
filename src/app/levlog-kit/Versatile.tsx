@@ -61,7 +61,7 @@ const Versatile = () => {
             </span>{" "}
             phone stand
           </h2>
-          <div>
+          <div className="text-lg">
             The LeVlog kit&apos;s articulated tripod stand allows for{" "}
             <HighlightedSpan>6 different</HighlightedSpan> use cases.
           </div>

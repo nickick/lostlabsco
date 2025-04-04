@@ -2,7 +2,7 @@ export const stickConfigurations = [
   {
     name: "Folded flat",
     description:
-      "Folded flat, the LeVlog kit is a compact aluminum attachment to the phone the size of 4 credit cards",
+      "Folded flat, the LeVlog kit is a compact aluminum attachment at just 7mm thin.",
     image: "/vlog/renders/folded-flat-1.png",
   },
   {

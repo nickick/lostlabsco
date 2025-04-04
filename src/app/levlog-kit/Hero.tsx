@@ -56,7 +56,7 @@ function LeVlogHero() {
           <h2 className="text-2xl font-bold">LeVlog Kit</h2>
         </div> */}
           <p className="absolute text-xs bottom-0 left-0 w-full text-center">
-            Prototype renders, currently designing final product.
+            Prototype renders, final designs subject to change.
           </p>
         </motion.div>
         <motion.div
