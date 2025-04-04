@@ -85,9 +85,9 @@ function Compact() {
               7mm thin
             </h3>
             <p className="">
-              We're using high-grade aluminum to keep the LeVlog kit thin and
-              light yet strong. At just 7mm thin, you won't even notice it's
-              there.
+              We&apos;re using high-grade aluminum to keep the LeVlog kit thin
+              and light yet strong. At just 7mm thin, you won&apos;t even notice
+              it&apos;s there.
             </p>
           </div>
         </motion.div>
