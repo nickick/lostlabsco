@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import { stickConfigurations } from "./data";
+import { useWindowSize } from "usehooks-ts";
 
 const StickConfig = ({
   config,
@@ -61,14 +62,28 @@ const Versatile = () => {
   const ref = useRef(null);
   const isInView = useInView(ref);
 
+  const { width } = useWindowSize();
+
+  const isMobile = width < 768;
+
   return (
     <motion.div
       className={cn(
         "w-full max-w-screen-lg mx-auto z-20",
         hostGroteskRegular.className
       )}
-      initial={{ opacity: 0, x: 100 }}
-      animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+      initial={
+        isMobile ? { opacity: 0, y: 100, x: 0 } : { opacity: 0, x: 100, y: 0 }
+      }
+      animate={
+        isInView
+          ? isMobile
+            ? { opacity: 1, y: 0, x: 0 }
+            : { opacity: 1, x: 0, y: 0 }
+          : isMobile
+          ? { opacity: 0, y: 100, x: 0 }
+          : { opacity: 0, x: 100, y: 0 }
+      }
       transition={{ duration: 0.5, delay: 0.5 }}
       id="versatile"
       ref={ref}

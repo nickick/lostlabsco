@@ -1,11 +1,11 @@
 "use client";
 
-import { cn } from "@/utils/cn";
-import { advercaseBold, hostGroteskRegular } from "../font";
 import { HighlightedSpan } from "@/components/Text";
-import Image from "next/image";
+import { cn } from "@/utils/cn";
 import { motion, useInView } from "framer-motion";
+import Image from "next/image";
 import { useRef } from "react";
+import { advercaseBold, hostGroteskRegular } from "../font";
 
 function Compact() {
   const ref = useRef(null);

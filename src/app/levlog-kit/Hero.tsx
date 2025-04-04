@@ -6,6 +6,7 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { Signup } from "@/components/Signup";
 import { useState } from "react";
+import { useWindowSize } from "usehooks-ts";
 
 function HighlightLink({
   children,
@@ -34,6 +35,10 @@ function HighlightLink({
 
 function LeVlogHero() {
   const [hasSubscribed, setHasSubscribed] = useState(false);
+  const { width } = useWindowSize();
+
+  const isMobile = width < 768;
+
   return (
     <div
       className={cn(
@@ -43,8 +48,14 @@ function LeVlogHero() {
     >
       <div className="flex flex-col md:flex-row items-center justify-center gap-12">
         <motion.div
-          initial={{ opacity: 0, x: -100 }}
-          animate={{ opacity: 1, x: 0 }}
+          initial={
+            isMobile
+              ? { opacity: 0, y: 100, x: 0 }
+              : { opacity: 0, x: -100, y: 0 }
+          }
+          animate={
+            isMobile ? { opacity: 1, y: 0, x: 0 } : { opacity: 1, x: 0, y: 0 }
+          }
           transition={{ duration: 1, ease: "easeInOut" }}
           className="w-full md:w-1/2 relative flex flex-col justify-end md:mt-0"
         >
@@ -52,17 +63,24 @@ function LeVlogHero() {
             <source src="/vlog/renders/full-modes.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-center justify-center"></div>
-          {/* <div className="absolute w-full bottom-4 text-white text-center">
-          <h2 className="text-2xl font-bold">LeVlog Kit</h2>
-        </div> */}
           <p className="absolute text-xs bottom-0 left-0 w-full text-center">
             Prototype renders, final designs subject to change.
           </p>
         </motion.div>
         <motion.div
-          initial={{ opacity: 0, x: 100 }}
-          animate={{ opacity: 1, x: 0 }}
-          transition={{ duration: 1, ease: "easeInOut" }}
+          initial={
+            isMobile
+              ? { opacity: 0, y: 100, x: 0 }
+              : { opacity: 0, x: 100, y: 0 }
+          }
+          animate={
+            isMobile ? { opacity: 1, y: 0, x: 0 } : { opacity: 1, x: 0, y: 0 }
+          }
+          transition={{
+            duration: 1,
+            ease: "easeInOut",
+            delay: isMobile ? 0.3 : 0,
+          }}
           className="flex flex-col gap-4 items-start w-full md:w-1/2 px-8 md:px-0"
         >
           <span className={cn("text-xl")}>Introducing the</span>
