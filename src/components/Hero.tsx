@@ -100,7 +100,7 @@ const Hero = () => {
           </li>
           <li>
             Product & Manufacturing Blueprints with{" "}
-            <HighlightedLink href="https://www.linkedin.com/in/jkuempel">
+            <HighlightedLink href="https://x.com/coffeewithjer">
               Jer
             </HighlightedLink>{" "}
             (How he designs $100M+ of hardware products)
