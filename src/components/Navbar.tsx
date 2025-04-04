@@ -18,8 +18,19 @@ const Navbar = () => {
           </span>
         </Link>
       </div>
-      <div className={cn("px-8", hostGroteskRegular.className)}>
-        <Link href="/submit">Draw</Link>
+      <div className={cn("flex px-8 gap-4", hostGroteskRegular.className)}>
+        <Link
+          href="/submit"
+          className="hover:text-(--accent) hover:underline transition-colors"
+        >
+          Draw
+        </Link>
+        <Link
+          href="/levlog-kit"
+          className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors"
+        >
+          LeVlog Kit
+        </Link>
       </div>
     </nav>
   );
