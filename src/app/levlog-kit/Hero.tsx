@@ -37,7 +37,7 @@ function LeVlogHero() {
   return (
     <div
       className={cn(
-        "flex flex-col items-center justify-center max-w-screen-lg mx-auto h-[calc(100vh-100px)] gap-8 md:px-8 relative z-20",
+        "flex flex-col items-center justify-center max-w-screen-lg mx-auto md:h-[calc(100vh-100px)] gap-8 md:px-8 relative z-20",
         hostGroteskRegular.className
       )}
     >
@@ -46,7 +46,7 @@ function LeVlogHero() {
           initial={{ opacity: 0, x: -100 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 1, ease: "easeInOut" }}
-          className="w-full md:w-1/2 relative flex flex-col justify-end"
+          className="w-full md:w-1/2 relative flex flex-col justify-end md:mt-0"
         >
           <video autoPlay muted loop playsInline className="w-full h-full">
             <source src="/vlog/renders/full-modes.mp4" type="video/mp4" />
@@ -94,15 +94,12 @@ function LeVlogHero() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
       >
-        <div className="flex flex-col items-center justify-center gap-0 mt-6">
-          <div>
-            {!hasSubscribed && (
-              <div>
-                Join our 90 day launch community to get updates on the LeVlog
-                Kit!
-              </div>
-            )}
-          </div>
+        <div className="flex flex-col items-center justify-center gap-0 mt-6 md:mt-12 pb-36 md:pb-0">
+          {!hasSubscribed && (
+            <div className="px-7 text-left md:text-left">
+              Join our 90 Day Launch Community to get updates on the LeVlog Kit!
+            </div>
+          )}
           <Signup
             hasSubscribed={hasSubscribed}
             setHasSubscribed={setHasSubscribed}
