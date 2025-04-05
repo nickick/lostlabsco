@@ -140,10 +140,8 @@ function LeVlogHero() {
             )}
             <Signup
               hasSubscribed={hasSubscribed}
-              setHasSubscribed={(hasSubscribedNext) => {
-                setHasSubscribed(hasSubscribedNext);
-                setPostSignupModalOpen(true);
-              }}
+              setHasSubscribed={setHasSubscribed}
+              setPostSignupModalOpen={setPostSignupModalOpen}
             />
             {hasSubscribed && <SignupFollowUp />}
           </div>

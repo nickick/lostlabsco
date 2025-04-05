@@ -2,7 +2,7 @@
 
 import { advercaseRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
-import { useEffect, useState } from "react";
+import { use, useEffect, useState } from "react";
 import { Spinner } from "./Spinner";
 import { useLocalStorage } from "usehooks-ts";
 import { amplitude } from "./AnalyticsProvider";
@@ -10,9 +10,11 @@ import { amplitude } from "./AnalyticsProvider";
 const Signup = ({
   hasSubscribed,
   setHasSubscribed,
+  setPostSignupModalOpen,
 }: {
   hasSubscribed: boolean;
   setHasSubscribed: (hasSubscribed: boolean) => void;
+  setPostSignupModalOpen: (postSignupModalOpen: boolean) => void;
 }) => {
   //set up state to hold email and response
   const [email, setEmail] = useState<string>("");
@@ -20,6 +22,14 @@ const Signup = ({
   const [isLoading, setIsLoading] = useState<boolean>(false);
 
   const [signedEmail, setSignedEmail] = useLocalStorage("signed-up-email", "");
+  const [buttonClicked, setButtonClicked] = useState<boolean>(false);
+
+  useEffect(() => {
+    if (buttonClicked && hasSubscribed) {
+      setPostSignupModalOpen(true);
+      setButtonClicked(false);
+    }
+  }, [buttonClicked, hasSubscribed]);
 
   useEffect(() => {
     if (signedEmail && !hasSubscribed) {
@@ -92,6 +102,9 @@ const Signup = ({
             !hasSubscribed && "bg-(--accent) text-black hover:bg-[#ffd804]/90",
             advercaseRegular.className
           )}
+          onClick={() => {
+            setButtonClicked(true);
+          }}
         >
           {hasSubscribed ? "Thanks for joining!" : "Join the community"}
           {isLoading && <Spinner className="w-4 h-4" />}

@@ -38,10 +38,8 @@ const Hero = () => {
         <motion.div className="flex w-full justify-center mb-8">
           <Signup
             hasSubscribed={hasSubscribed}
-            setHasSubscribed={(hasSubscribedNext) => {
-              setHasSubscribed(hasSubscribedNext);
-              setPostSignupModalOpen(true);
-            }}
+            setHasSubscribed={setHasSubscribed}
+            setPostSignupModalOpen={setPostSignupModalOpen}
           />
         </motion.div>
         <motion.div className="flex w-full justify-center mb-8">

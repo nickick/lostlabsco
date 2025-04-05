@@ -6,42 +6,51 @@ import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { advercaseBold } from "../font";
+import { PostSignupModal } from "@/components/PostSignupModal";
 const CTABottom = () => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
+  const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 100 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
-    >
-      <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36 md:pb-12">
-        <div>Want to learn more?</div>
-        <div className={cn("flex flex-col items-center justify-center")}>
-          <div
-            className={cn(
-              "flex flex-col items-center justify-center gap-2 text-xl",
-              advercaseBold.className
-            )}
-          >
-            <div>Join our</div>
+    <>
+      <PostSignupModal
+        open={postSignupModalOpen}
+        setOpen={setPostSignupModalOpen}
+      />
+      <motion.div
+        initial={{ opacity: 0, y: 100 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+      >
+        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36 md:pb-12">
+          <div>Want to learn more?</div>
+          <div className={cn("flex flex-col items-center justify-center")}>
             <div
               className={cn(
-                "text-4xl text-(--accent) drop-shadow-[0_0_2px_var(--accent)]"
+                "flex flex-col items-center justify-center gap-2 text-xl",
+                advercaseBold.className
               )}
             >
-              90 Day Launch
+              <div>Join our</div>
+              <div
+                className={cn(
+                  "text-4xl text-(--accent) drop-shadow-[0_0_2px_var(--accent)]"
+                )}
+              >
+                90 Day Launch
+              </div>
+              <div>Community</div>
             </div>
-            <div>Community</div>
+            <Signup
+              hasSubscribed={hasSubscribed}
+              setHasSubscribed={setHasSubscribed}
+              setPostSignupModalOpen={setPostSignupModalOpen}
+            />
+            {hasSubscribed && <SignupFollowUp />}
           </div>
-          <Signup
-            hasSubscribed={hasSubscribed}
-            setHasSubscribed={setHasSubscribed}
-          />
-          {hasSubscribed && <SignupFollowUp />}
         </div>
-      </div>
-    </motion.div>
+      </motion.div>
+    </>
   );
 };
 
