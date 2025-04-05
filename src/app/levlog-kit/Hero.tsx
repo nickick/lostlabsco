@@ -1,14 +1,13 @@
 "use client";
 
 import { Signup } from "@/components/Signup";
+import SignupFollowUp from "@/components/SignupFollowUp";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { advercaseBold, hostGroteskRegular } from "../font";
-import { WAQRCodeChip } from "@/components/WAQRCodeChip";
-import SignupFollowUp from "@/components/SignupFollowUp";
 
 function HighlightLink({
   children,
