@@ -22,7 +22,7 @@ const CTABottom = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
       >
-        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36 md:pb-12">
+        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36">
           <div>Want to learn more?</div>
           <div className={cn("flex flex-col items-center justify-center")}>
             <div
