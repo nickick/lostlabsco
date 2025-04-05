@@ -1,10 +1,16 @@
 import Link from "next/link";
 import { QRCodeForURI } from "./QRCode";
 import { IoLogoWhatsapp } from "react-icons/io5";
+import { cn } from "@/utils/cn";
 
-export const WAQRCodeChip = () => {
+export const WAQRCodeChip = ({ inModal = false }: { inModal?: boolean }) => {
   return (
-    <div className="flex flex-col md:flex-row items-start md:items-center justify-center md:gap-2 pt-4">
+    <div
+      className={cn(
+        "flex md:flex-row gap-2 md:items-center justify-center md:gap-2 pt-4",
+        inModal && "flex-col items-start gap-0"
+      )}
+    >
       <div className="flex items-center gap-2">Join our secret</div>
       <div className="flex items-center gap-2">
         <Link

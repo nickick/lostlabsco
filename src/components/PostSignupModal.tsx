@@ -34,7 +34,8 @@ export const PostSignupModal = ({
         </div>
         <div className="text-lg font-bold pt-6">Next steps:</div>
         <div className="flex md:items-center gap-2">
-          <div className="relative top-4 md:top-2">1.</div> <WAQRCodeChip />
+          <div className="relative top-4 md:top-2">1.</div>{" "}
+          <WAQRCodeChip inModal />
         </div>
         <div className="pt-2">
           2.{" "}
