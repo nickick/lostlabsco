@@ -26,10 +26,10 @@ const Navbar = () => {
           Submit a Logo
         </Link>
         <Link
-          href="/levlog-kit"
+          href="/product"
           className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors"
         >
-          LeVlog Kit
+          The Product
         </Link>
       </div>
     </nav>
