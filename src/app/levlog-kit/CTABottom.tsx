@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { advercaseBold } from "../font";
 import { PostSignupModal } from "@/components/PostSignupModal";
+import { LeavesBackground } from "@/components/LeavesBackground";
+
 const CTABottom = () => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
@@ -21,7 +23,9 @@ const CTABottom = () => {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
+        className="relative"
       >
+        <LeavesBackground className="max-h-[70svh]" />
         <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36">
           <div>Want to learn more?</div>
           <div className={cn("flex flex-col items-center justify-center")}>

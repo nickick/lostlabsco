@@ -22,7 +22,7 @@ const Submit = () => {
         >
           Submit a Logo Design
         </h1>
-        <p className="text-lg">
+        <p className="text-lg px-8 sm:px-0">
           Build Lost Labs with us - submit a logo design and{" "}
           <HighlightedSpan className="text-sm">
             we might use it!

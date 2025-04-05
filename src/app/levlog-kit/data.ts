@@ -3,7 +3,7 @@ export const stickConfigurations = [
     name: "Folded flat",
     description:
       "Folded flat, the LeVlog kit is a compact aluminum attachment at just 7mm thin.",
-    image: "/vlog/renders/folded-flat-1.png",
+    image: "/vlog/renders/flat.png",
   },
   {
     name: "Tripod",
