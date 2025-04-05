@@ -28,7 +28,7 @@ const CanvasButton = ({
 }) => {
   return (
     <button
-      className="cursor-pointer border w-8 h-8 flex items-center justify-center rounded-full"
+      className="cursor-pointer border w-8 h-8 flex items-center justify-center rounded-full hover:drop-shadow-[0_0_2px_var(--accent)] transition-all"
       onClick={onClick}
     >
       {children}
@@ -56,7 +56,6 @@ const Canvas = () => {
 
   const handleSubmit = async () => {
     setIsLoading(true);
-    console.log(signedEmail, signedName);
     try {
       if (!signedEmail || !signedName) {
         return;
@@ -69,7 +68,6 @@ const Canvas = () => {
           name: signedName,
         }),
       });
-      console.log(response);
       setSubmitted(true);
     } catch (error) {
       console.error(error);
@@ -125,7 +123,7 @@ const Canvas = () => {
       </div>
       <div className="flex flex-col gap-4">
         <div className="flex flex-col justify-between gap-4">
-          <div className="flex justify-between gap-4">
+          <div className="flex justify-between gap-2 px-2">
             <CanvasButton onClick={handleBrushLarge}>
               <BrushIcon className="w-6 h-6" />
             </CanvasButton>
@@ -140,7 +138,7 @@ const Canvas = () => {
             </CanvasButton>
           </div>
         </div>
-        <div className="flex flex-col gap-4">
+        <div className="flex md:flex-col gap-4 pt-4 md:pt-0">
           <ChromePicker
             onChangeComplete={(color) => {
               setColor(color.hex);
