@@ -11,10 +11,12 @@ const Signup = ({
   hasSubscribed,
   setHasSubscribed,
   setPostSignupModalOpen,
+  eventName,
 }: {
   hasSubscribed: boolean;
   setHasSubscribed: (hasSubscribed: boolean) => void;
   setPostSignupModalOpen: (postSignupModalOpen: boolean) => void;
+  eventName?: string;
 }) => {
   //set up state to hold email and response
   const [email, setEmail] = useState<string>("");
@@ -28,6 +30,14 @@ const Signup = ({
     if (buttonClicked && hasSubscribed) {
       setPostSignupModalOpen(true);
       setButtonClicked(false);
+      amplitude.track("Signup Button Clicked", {
+        path: window.location.pathname,
+      });
+      if (eventName) {
+        amplitude.track(eventName, {
+          path: window.location.pathname,
+        });
+      }
     }
   }, [buttonClicked, hasSubscribed]);
 

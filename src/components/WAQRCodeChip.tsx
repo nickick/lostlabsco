@@ -2,6 +2,7 @@ import Link from "next/link";
 import { QRCodeForURI } from "./QRCode";
 import { IoLogoWhatsapp } from "react-icons/io5";
 import { cn } from "@/utils/cn";
+import { amplitude } from "./AnalyticsProvider";
 
 export const WAQRCodeChip = ({ inModal = false }: { inModal?: boolean }) => {
   return (
@@ -17,6 +18,9 @@ export const WAQRCodeChip = ({ inModal = false }: { inModal?: boolean }) => {
           href="https://chat.whatsapp.com/JxiNsxdjzLxByHsg0JhFN1"
           target="_blank"
           className="flex items-center gap-2 bg-[#23D366] text-white rounded-md p-2 cursor-pointer hover:bg-[#23D366]/90 transition-colors duration-300"
+          onClick={() => {
+            amplitude.track("WhatsApp QR Code Clicked");
+          }}
         >
           WhatsApp <IoLogoWhatsapp className="w-6 h-6" />
         </Link>

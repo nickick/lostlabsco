@@ -45,6 +45,7 @@ const CTABottom = () => {
               hasSubscribed={hasSubscribed}
               setHasSubscribed={setHasSubscribed}
               setPostSignupModalOpen={setPostSignupModalOpen}
+              eventName="CTA Bottom Signup Button Clicked"
             />
             {hasSubscribed && <SignupFollowUp />}
           </div>

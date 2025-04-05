@@ -1,12 +1,14 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import "./globals.css";
+import { Trackers } from "@/components/analytics/Trackers";
+import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import { BackgroundLeaves } from "@/components/BackgroundLeaves";
 import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
-import { BackgroundLeaves } from "@/components/BackgroundLeaves";
-import { AnalyticsProvider } from "@/components/AnalyticsProvider";
 import { cn } from "@/utils/cn";
+import type { Metadata } from "next";
+import localFont from "next/font/local";
 import { hostGroteskRegular } from "./font";
+import "./globals.css";
+
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -38,6 +40,7 @@ export default function RootLayout({
           "antialiased relative h-full w-full overflow-x-hidden"
         )}
       >
+        <Trackers />
         <div className="w-full h-full relative">
           <AnalyticsProvider>
             <BackgroundLeaves
