@@ -1,4 +1,4 @@
-import { Trash, Undo, Send } from "lucide-react";
+import { Trash, Undo, Send, BrushIcon } from "lucide-react";
 import { Component, useRef, useState } from "react";
 import CanvasDraw from "react-canvas-draw";
 import { ChromePicker } from "react-color";
@@ -19,10 +19,27 @@ declare module "react-canvas-draw" {
   }
 }
 
+const CanvasButton = ({
+  children,
+  onClick,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+}) => {
+  return (
+    <button
+      className="cursor-pointer border w-8 h-8 flex items-center justify-center rounded-full"
+      onClick={onClick}
+    >
+      {children}
+    </button>
+  );
+};
 const Canvas = () => {
   const [color, setColor] = useState("#000000");
+  const [brushSize, setBrushSize] = useState(12);
   const { width } = useWindowSize();
-  const canvasSize = width ? width - 50 : 400;
+  const canvasSize = Math.min(width ? width - 30 : 360, 400);
   const canvasRef = useRef<CanvasDraw>(null);
 
   const [signedEmail] = useLocalStorage("signed-up-email", "");
@@ -61,6 +78,14 @@ const Canvas = () => {
     }
   };
 
+  const handleBrushLarge = () => {
+    setBrushSize(12);
+  };
+
+  const handleBrushSmall = () => {
+    setBrushSize(4);
+  };
+
   const [isLoading, setIsLoading] = useState(false);
 
   const submitButton = (
@@ -84,35 +109,46 @@ const Canvas = () => {
 
   return (
     <div className="w-full flex flex-col md:flex-row gap-4 justify-center items-center">
-      <div className="mx-4">
+      <div className="w-full max-w-md relative flex flex-col justify-center items-center">
+        <div className="w-full text-center text-sm text-gray-200 md:hidden">
+          Color picker below
+        </div>
         <CanvasDraw
           ref={canvasRef}
           hideInterface={false}
           hideGrid={true}
           brushColor={color}
-          height={canvasSize}
-          width={canvasSize}
+          brushRadius={brushSize}
+          canvasHeight={canvasSize}
+          canvasWidth={canvasSize}
         />
       </div>
       <div className="flex flex-col gap-4">
-        <div className="flex justify-between gap-4">
-          <div className="flex gap-4">
-            <button onClick={handleUndo}>
-              <Undo />
-            </button>
-            <button onClick={handleClear}>
-              <Trash />
-            </button>
+        <div className="flex flex-col justify-between gap-4">
+          <div className="flex justify-between gap-4">
+            <CanvasButton onClick={handleBrushLarge}>
+              <BrushIcon className="w-6 h-6" />
+            </CanvasButton>
+            <CanvasButton onClick={handleBrushSmall}>
+              <BrushIcon className="w-3 h-3" />
+            </CanvasButton>
+            <CanvasButton onClick={handleUndo}>
+              <Undo className="w-4 h-4" />
+            </CanvasButton>
+            <CanvasButton onClick={handleClear}>
+              <Trash className="w-4 h-4" />
+            </CanvasButton>
           </div>
+        </div>
+        <div className="flex flex-col gap-4">
+          <ChromePicker
+            onChangeComplete={(color) => {
+              setColor(color.hex);
+            }}
+            color={color}
+          />
           <SubmitLogoModal button={submitButton} onSubmit={handleSubmit} />
         </div>
-        <ChromePicker
-          onChangeComplete={(color) => {
-            console.log(color);
-            setColor(color.hex);
-          }}
-          color={color}
-        />
       </div>
     </div>
   );

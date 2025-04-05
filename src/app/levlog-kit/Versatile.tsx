@@ -69,7 +69,7 @@ const Versatile = () => {
   return (
     <motion.div
       className={cn(
-        "w-full max-w-screen-lg mx-auto z-20",
+        "w-full max-w-screen-lg mx-auto z-20 px-8",
         hostGroteskRegular.className
       )}
       initial={
@@ -88,7 +88,7 @@ const Versatile = () => {
       id="versatile"
       ref={ref}
     >
-      <div className="flex flex-col items-center justify-center px-4 md:pb-16 mb-16 md:mt-0">
+      <div className="flex flex-col items-center justify-center md:pb-16 mb-16 md:mt-0">
         <div className="flex flex-col md:items-center md:justify-center py-8 gap-4 px-4 md:px-8 xl:px-0">
           <h2 className={cn("text-3xl ", advercaseBold.className)}>
             The most{" "}
