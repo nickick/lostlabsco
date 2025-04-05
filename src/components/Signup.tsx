@@ -2,10 +2,10 @@
 
 import { advercaseRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
-import { use, useEffect, useState } from "react";
-import { Spinner } from "./Spinner";
+import { useEffect, useState } from "react";
 import { useLocalStorage } from "usehooks-ts";
 import { amplitude } from "./AnalyticsProvider";
+import { Spinner } from "./Spinner";
 
 const Signup = ({
   hasSubscribed,
