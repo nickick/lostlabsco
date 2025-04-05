@@ -75,7 +75,7 @@ function Compact() {
           transition={{ duration: 0.5, delay: 0.5 }}
         >
           <Image
-            src="/vlog/renders/flat.png"
+            src="/vlog/renders/thin.png"
             alt="Compact LeVlog Kit"
             width={1000}
             height={1000}

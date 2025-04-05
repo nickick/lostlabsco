@@ -33,26 +33,26 @@ export const insertConfigurations = [
     name: "LCD screen",
     description:
       "See your back camera's framing on the back-mounted LCD screen.",
-    image: "/vlog/renders/folded-flat-2.png",
+    image: "/vlog/renders/modular.png",
     status: "ready at launch",
   },
   {
     name: "Magsafe battery",
     description:
       "Add a Magsafe battery to your phone to power your phone and accessories.",
-    image: "/vlog/renders/folded-flat-2.png",
+    image: "/vlog/renders/modular.png",
     status: "coming soon",
   },
   {
     name: "External SSD",
     description: "Record ProRes log footage directly to drive.",
-    image: "/vlog/renders/folded-flat-2.png",
+    image: "/vlog/renders/modular.png",
     status: "coming soon",
   },
   {
     name: "SD card",
     description: "Edit photos and videos directly on your phone.",
-    image: "/vlog/renders/folded-flat-2.png",
+    image: "/vlog/renders/modular.png",
     status: "coming soon",
   },
 ];
