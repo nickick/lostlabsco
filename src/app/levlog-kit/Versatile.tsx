@@ -76,7 +76,7 @@ const Versatile = () => {
   return (
     <motion.div
       className={cn(
-        "w-full max-w-screen-lg mx-auto z-20 px-8",
+        "w-full max-w-screen-lg mx-auto z-20 px-4 md:px-8",
         hostGroteskRegular.className
       )}
       initial={

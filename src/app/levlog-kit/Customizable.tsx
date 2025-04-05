@@ -23,7 +23,7 @@ const Customizable = () => {
   return (
     <motion.div
       ref={ref}
-      className="flex flex-col items-center justify-center gap-4 w-full max-w-screen-lg md:mx-auto px-8 relative z-20"
+      className="flex flex-col items-center justify-center gap-4 w-full max-w-screen-lg md:mx-auto px-4 md:px-8 relative z-20"
       initial={{ opacity: 0, y: 50 }}
       animate={show ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
