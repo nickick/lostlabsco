@@ -79,7 +79,7 @@ const Customizable = () => {
             ))}
           </ul>
           <p className="w-full pt-8 md:pt-0 flex justify-center">
-            Each of these accessories are Magsafe compliant and can be used
+            Each of these accessories are Magsafe compatible and can be used
             independently or combined with the articulated stand.
           </p>
         </div>
