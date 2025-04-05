@@ -134,8 +134,8 @@ function LeVlogHero() {
           <div className="flex flex-col items-center justify-center gap-0 mt-6 md:mt-12 pb-36 md:pb-0">
             {!hasSubscribed && (
               <div className="px-7 text-left md:text-left">
-                Join our 90 Day Launch Community to get updates on the LeVlog
-                Kit!
+                Enter your email to join our 90 Day Launch Community and join
+                our WhatsApp!
               </div>
             )}
             <Signup
