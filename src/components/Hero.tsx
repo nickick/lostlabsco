@@ -3,12 +3,11 @@
 import { advercaseBold, hostGroteskRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
-import { HighlightedLink, HighlightedSpan } from "./Text";
 import { Signup } from "./Signup";
+import SignupFollowUp from "./SignupFollowUp";
+import { HighlightedLink, HighlightedSpan } from "./Text";
 import { TextAnimation } from "./TextAnimation";
-
 const Hero = () => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
 
@@ -38,19 +37,14 @@ const Hero = () => {
       </motion.div>
       <motion.div className="flex w-full justify-center mb-8">
         {hasSubscribed && (
-          <p className="w-84 sm:w-96 mx-auto">
-            We&apos;re building a hardware business in 90 days, and we&apos;re
-            building it{" "}
-            <HighlightedSpan className="text-sm">with you</HighlightedSpan>.
-            Want to{" "}
-            <Link
-              href="/submit"
-              className="text-(--accent) border-b border-b-(--accent) hover:text-(--accent)/90 transition-all"
-            >
-              submit a logo design?
-            </Link>
-            <div className="w-full border-b-(--accent) border-b mt-8" />
-          </p>
+          <div className="flex flex-col items-center justify-center gap-0 mb-36">
+            <p className="w-84 sm:w-96 mx-auto">
+              We&apos;re building a hardware business in 90 days, and we&apos;re
+              building it{" "}
+              <HighlightedSpan className="text-sm">with you</HighlightedSpan>.
+            </p>
+            <SignupFollowUp />
+          </div>
         )}
       </motion.div>
       <motion.div

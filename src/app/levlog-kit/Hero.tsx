@@ -1,12 +1,14 @@
 "use client";
 
-import { cn } from "@/utils/cn";
-import { advercaseBold, hostGroteskRegular } from "../font";
-import Link from "next/link";
-import { motion } from "framer-motion";
 import { Signup } from "@/components/Signup";
+import { cn } from "@/utils/cn";
+import { motion } from "framer-motion";
+import Link from "next/link";
 import { useState } from "react";
 import { useWindowSize } from "usehooks-ts";
+import { advercaseBold, hostGroteskRegular } from "../font";
+import { WAQRCodeChip } from "@/components/WAQRCodeChip";
+import SignupFollowUp from "@/components/SignupFollowUp";
 
 function HighlightLink({
   children,
@@ -100,8 +102,11 @@ function LeVlogHero() {
             <HighlightLink href="/levlog-kit/#versatile">
               versatile
             </HighlightLink>
-            , <HighlightLink href="/levlog-kit/#compact">compact</HighlightLink>
-            , <HighlightLink href="/levlog-kit/#premium">premium</HighlightLink>{" "}
+            ,{" "}
+            <HighlightLink href="/levlog-kit/#customizable">
+              customizable
+            </HighlightLink>
+            , <HighlightLink href="/levlog-kit/#compact">compact</HighlightLink>{" "}
             phone tripod and accessories kit that lets digital nomads capture
             their adventures.
           </div>
@@ -122,19 +127,7 @@ function LeVlogHero() {
             hasSubscribed={hasSubscribed}
             setHasSubscribed={setHasSubscribed}
           />
-          {hasSubscribed && (
-            <div className="pt-4">
-              Want to{" "}
-              <Link
-                href="/submit"
-                target="_blank"
-                className="underline text-(--accent) hover:text-(--accent)/90 transition-colors duration-300"
-              >
-                design us a logo
-              </Link>{" "}
-              with us next?
-            </div>
-          )}
+          {hasSubscribed && <SignupFollowUp />}
         </div>
       </motion.div>
     </div>

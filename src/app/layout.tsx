@@ -5,6 +5,8 @@ import { Footer } from "@/components/Footer";
 import { Navbar } from "@/components/Navbar";
 import { BackgroundLeaves } from "@/components/BackgroundLeaves";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
+import { cn } from "@/utils/cn";
+import { hostGroteskRegular } from "./font";
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
   variable: "--font-geist-sans",
@@ -29,7 +31,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative h-full w-full overflow-x-hidden`}
+        className={cn(
+          geistSans.variable,
+          geistMono.variable,
+          hostGroteskRegular.className,
+          "antialiased relative h-full w-full overflow-x-hidden"
+        )}
       >
         <div className="w-full h-full relative">
           <AnalyticsProvider>

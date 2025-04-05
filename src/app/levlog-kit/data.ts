@@ -7,7 +7,7 @@ export const stickConfigurations = [
   },
   {
     name: "Tripod",
-    description: "Use the tripod to set up your phone in a stable position.",
+    description: "Use the tripod to set up your phone for easy viewing.",
     image: "/vlog/renders/tripod.png",
   },
   {
@@ -22,14 +22,37 @@ export const stickConfigurations = [
     image: "/vlog/renders/steadycam.png",
   },
   {
-    name: "Selfie Stick",
-    description:
-      "Extend the grips to add 12 inches of additional reach as a selfie stick.",
-    image: "/vlog/renders/selfie-2.png",
-  },
-  {
     name: "Hanger mount",
     description: "Hook the mount over doors to get unique camera angles.",
     image: "/vlog/renders/hanger-mount.png",
+  },
+];
+
+export const insertConfigurations = [
+  {
+    name: "LCD screen",
+    description:
+      "See your back camera's framing on the back-mounted LCD screen.",
+    image: "/vlog/renders/folded-flat-2.png",
+    status: "ready at launch",
+  },
+  {
+    name: "Magsafe battery",
+    description:
+      "Add a Magsafe battery to your phone to power your phone and accessories.",
+    image: "/vlog/renders/folded-flat-2.png",
+    status: "coming soon",
+  },
+  {
+    name: "External SSD",
+    description: "Record ProRes log footage directly to drive.",
+    image: "/vlog/renders/folded-flat-2.png",
+    status: "coming soon",
+  },
+  {
+    name: "SD card",
+    description: "Edit photos and videos directly on your phone.",
+    image: "/vlog/renders/folded-flat-2.png",
+    status: "coming soon",
   },
 ];
