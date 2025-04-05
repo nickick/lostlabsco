@@ -60,7 +60,7 @@ const Canvas = () => {
       if (!signedEmail || !signedName) {
         return;
       }
-      const response = await fetch("/api/submit", {
+      await fetch("/api/submit", {
         method: "POST",
         body: JSON.stringify({
           image: canvasRef.current?.getDataURL("png", false, "#ffffff"),
