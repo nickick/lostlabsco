@@ -106,7 +106,7 @@ const Versatile = () => {
           </h2>
           <div className="text-lg">
             The LeVlog kit&apos;s articulated tripod stand allows for{" "}
-            <HighlightedSpan>5 different</HighlightedSpan> use cases.
+            <HighlightedSpan>4 different</HighlightedSpan> use cases.
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-4 w-full">
             {stickConfigurations.map((config, index) => (
