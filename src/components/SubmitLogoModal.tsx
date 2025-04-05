@@ -55,6 +55,7 @@ function SubmitLogoModal({
             <Signup
               hasSubscribed={hasSubscribed}
               setHasSubscribed={setHasSubscribed}
+              setPostSignupModalOpen={() => {}}
             />
           </div>
         )}
