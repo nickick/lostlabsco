@@ -21,11 +21,6 @@ export const stickConfigurations = [
       "Turn the mount into a pair of steadycam grips to record buttery smooth content.",
     image: "/vlog/renders/steadycam.png",
   },
-  {
-    name: "Hanger mount",
-    description: "Hook the mount over doors to get unique camera angles.",
-    image: "/vlog/renders/hanger-mount.png",
-  },
 ];
 
 export const insertConfigurations = [

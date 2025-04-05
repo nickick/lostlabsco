@@ -23,7 +23,7 @@ const Navbar = () => {
           href="/submit"
           className="hover:text-(--accent) hover:underline transition-colors"
         >
-          Draw
+          Submit a Logo
         </Link>
         <Link
           href="/levlog-kit"

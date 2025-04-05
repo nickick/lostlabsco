@@ -108,7 +108,8 @@ function LeVlogHero() {
               LeVlog Kit
             </h1>
             <div className={cn("text-xl", advercaseBold.className)}>
-              The all-in-one phone vlogging accessory made for the digital nomad
+              The all-in-one phone accessory made for creators, travelers, and
+              digital nomads.
             </div>
             <div className={cn("text-xl")}>
               A{" "}
