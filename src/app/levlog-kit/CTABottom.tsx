@@ -27,14 +27,14 @@ const CTABottom = () => {
           <div className={cn("flex flex-col items-center justify-center")}>
             <div
               className={cn(
-                "flex flex-col items-center justify-center gap-2 text-xl",
-                advercaseBold.className
+                "flex flex-col items-center justify-center gap-2 text-base"
               )}
             >
               <div>Join our</div>
               <div
                 className={cn(
-                  "text-4xl text-(--accent) drop-shadow-[0_0_2px_var(--accent)]"
+                  "text-3xl text-(--accent) drop-shadow-[0_0_2px_var(--accent)]",
+                  advercaseBold.className
                 )}
               >
                 90 Day Launch
