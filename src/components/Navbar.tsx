@@ -13,7 +13,7 @@ const Navbar = () => {
           )}
           href="/"
         >
-          <span className="font-bold text-2xl drop-shadow-[0_0_1px_var(--accent)]">
+          <span className="font-bold text-2xl drop-shadow-[0_0_1px_var(--accent)] whitespace-nowrap">
             Lost Labs
           </span>
         </Link>
@@ -21,13 +21,13 @@ const Navbar = () => {
       <div className={cn("flex px-8 gap-4", hostGroteskRegular.className)}>
         <Link
           href="/submit"
-          className="hover:text-(--accent) hover:underline transition-colors"
+          className="hover:text-(--accent) hover:underline transition-colors whitespace-nowrap"
         >
           Submit a Logo
         </Link>
         <Link
           href="/product"
-          className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors"
+          className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors whitespace-nowrap"
         >
           The Product
         </Link>
