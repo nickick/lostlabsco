@@ -56,7 +56,7 @@ const Hero = () => {
                 we&apos;re building it{" "}
                 <HighlightedSpan className="text-sm">with you</HighlightedSpan>.
               </p>
-              <SignupFollowUp />
+              <SignupFollowUp showProductLink />
             </div>
           )}
         </motion.div>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { WAQRCodeChip } from "./WAQRCodeChip";
 
-const SignupFollowUp = () => {
+const SignupFollowUp = ({ showProductLink }: { showProductLink?: boolean }) => {
   return (
     <div className="flex flex-col items-center justify-center gap-0">
       <WAQRCodeChip />
@@ -16,6 +16,14 @@ const SignupFollowUp = () => {
         </Link>{" "}
         with us next?
       </div>
+      {showProductLink && (
+        <Link
+          href="/product"
+          className="underline text-(--accent) hover:text-(--accent)/90 transition-colors duration-300 mt-8"
+        >
+          Check out our product!
+        </Link>
+      )}
     </div>
   );
 };
