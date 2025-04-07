@@ -26,7 +26,7 @@ const CTABottom = () => {
         className="relative"
       >
         <LeavesBackground className="max-h-[70svh]" />
-        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36">
+        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36 z-20 relative">
           <div>Want to learn more?</div>
           <div className={cn("flex flex-col items-center justify-center")}>
             <div
