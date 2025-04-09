@@ -7,6 +7,7 @@ import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { hostGroteskRegular } from "./font";
+import ogImage from "./opengraph-image.jpeg";
 import "./globals.css";
 
 const geistSans = localFont({
@@ -28,7 +29,9 @@ export const metadata: Metadata = {
     description: "Join our 90 Day Launch Community!",
     images: [
       {
-        url: "/opengraph-image.jpeg",
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
       },
     ],
   },
@@ -38,7 +41,9 @@ export const metadata: Metadata = {
     description: "Join our 90 Day Launch Community!",
     images: [
       {
-        url: "/opengraph-image.jpeg",
+        url: ogImage.src,
+        width: ogImage.width,
+        height: ogImage.height,
       },
     ],
   },
