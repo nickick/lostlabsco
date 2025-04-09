@@ -1,7 +1,3 @@
-import { advercaseBold } from "@/app/font";
-import ReserveButton from "@/components/ReserveButton";
-import { cn } from "@/utils/cn";
-
 export default function Reserve() {
   return (
     <div className="flex flex-col items-center justify-center h-screen max-w-screen-xl mx-auto px-8 relative z-20">
