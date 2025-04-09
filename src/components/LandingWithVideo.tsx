@@ -31,7 +31,7 @@ const LandingWithVideo = ({ video }: { video: typeof vid }) => {
         <Video src={video} autoPlay loop className="w-full h-full mb-24" />
       </div>
       <div className="flex flex-col items-center justify-center gap-4 w-full">
-        <div className={cn(advercaseBold.className, "text-xl mt-4 md:mt-0")}>
+        <div className={cn(advercaseBold.className, "text-xl mt-4 md:mt-6")}>
           Join our
         </div>
         <div

@@ -22,7 +22,26 @@ const geistMono = localFont({
 
 export const metadata: Metadata = {
   title: "Lost Labs",
-  description: "Join us for our 90 Day Launch!",
+  description: "Join our 90 Day Launch Community!",
+  openGraph: {
+    title: "Lost Labs",
+    description: "Join our 90 Day Launch Community!",
+    images: [
+      {
+        url: "/opengraph-image.jpeg",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Lost Labs",
+    description: "Join our 90 Day Launch Community!",
+    images: [
+      {
+        url: "/opengraph-image.jpeg",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
