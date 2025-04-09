@@ -6,10 +6,16 @@ import Video from "next-video";
 import { cn } from "@/utils/cn";
 import { Signup } from "./Signup";
 import { PostSignupModal } from "./PostSignupModal";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { amplitude } from "./AnalyticsProvider";
 const LandingWithVideo = ({ video }: { video: typeof vid }) => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
+  useEffect(() => {
+    amplitude.track("Landing Page viewed", {
+      path: window.location.pathname,
+    });
+  }, []);
 
   return (
     <div className="flex flex-col items-center justify-center md:justify-start gap-4 w-full z-20 relative h-screen mx-auto">
