@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { WAQRCodeChip } from "./WAQRCodeChip";
+import ReserveButton from "./ReserveButton";
 
 const SignupFollowUp = ({ showProductLink }: { showProductLink?: boolean }) => {
   return (

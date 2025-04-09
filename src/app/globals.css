@@ -82,3 +82,7 @@
     width: 20px;
   }
 }
+
+.shopify-buy-button {
+  font-family: var(--font-advercase-bold);
+}

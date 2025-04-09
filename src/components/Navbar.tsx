@@ -23,13 +23,13 @@ const Navbar = () => {
           href="/submit"
           className="hover:text-(--accent) hover:underline transition-colors whitespace-nowrap"
         >
-          Submit a Logo
+          Submit Logo
         </Link>
         <Link
           href="/product"
           className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors whitespace-nowrap"
         >
-          The Product
+          Product
         </Link>
       </div>
     </nav>
