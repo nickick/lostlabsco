@@ -1,20 +1,14 @@
 "use client";
 
-import {
-  advercaseBold,
-  advercaseRegular,
-  hostGroteskRegular,
-} from "@/app/font";
+import { advercaseBold, hostGroteskRegular } from "@/app/font";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { PostSignupModal } from "./PostSignupModal";
 import { Signup } from "./Signup";
 import SignupFollowUp from "./SignupFollowUp";
 import { HighlightedLink, HighlightedSpan } from "./Text";
 import { TextAnimation } from "./TextAnimation";
-import { PostSignupModal } from "./PostSignupModal";
-import Link from "next/link";
-import { amplitude } from "./AnalyticsProvider";
 const Hero = () => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
@@ -83,18 +77,6 @@ const Hero = () => {
               all in 90 days.
             </HighlightedSpan>
           </p>
-          <Link
-            href="/levlog-kit"
-            className={cn(
-              "text-(--accent) underline hover:text-(--accent)/80 rounded-md py-3 px-4 text-center text-xl drop-shadow-[0_0_2px_var(--accent)]",
-              advercaseRegular.className
-            )}
-            onClick={() => {
-              amplitude.track("product button clicked");
-            }}
-          >
-            Check out our product
-          </Link>
         </motion.div>
 
         <motion.div

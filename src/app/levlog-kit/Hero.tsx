@@ -1,7 +1,7 @@
 "use client";
 
-import { Signup } from "@/components/Signup";
-import SignupFollowUp from "@/components/SignupFollowUp";
+import { PostSignupModal } from "@/components/PostSignupModal";
+import { ReserveSell } from "@/components/ReserveSell";
 import { cn } from "@/utils/cn";
 import { motion } from "framer-motion";
 import Video from "next-video";
@@ -10,7 +10,6 @@ import { useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import fullModes from "/videos/full-modes.mp4";
-import { PostSignupModal } from "@/components/PostSignupModal";
 
 function HighlightLink({
   children,
@@ -38,7 +37,6 @@ function HighlightLink({
 }
 
 function LeVlogHero() {
-  const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
   const { width } = useWindowSize();
 
@@ -105,7 +103,7 @@ function LeVlogHero() {
                 advercaseBold.className
               )}
             >
-              LeVlog Kit
+              SnapKit
             </h1>
             <div className={cn("text-xl", advercaseBold.className)}>
               The all-in-one phone accessory made for creators, travelers, and
@@ -133,18 +131,7 @@ function LeVlogHero() {
           transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
         >
           <div className="flex flex-col items-center justify-center gap-0 mt-6 md:mt-12 pb-36 md:pb-0">
-            {!hasSubscribed && (
-              <div className="px-7 text-left md:text-left">
-                Enter your email to join our 90 Day Launch Community and join
-                our WhatsApp!
-              </div>
-            )}
-            <Signup
-              hasSubscribed={hasSubscribed}
-              setHasSubscribed={setHasSubscribed}
-              setPostSignupModalOpen={setPostSignupModalOpen}
-            />
-            {hasSubscribed && <SignupFollowUp />}
+            <ReserveSell />
           </div>
         </motion.div>
       </div>
