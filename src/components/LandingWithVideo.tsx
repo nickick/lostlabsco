@@ -14,6 +14,7 @@ const LandingWithVideo = ({ video }: { video: typeof vid }) => {
   useEffect(() => {
     amplitude.track("Landing Page viewed", {
       path: window.location.pathname,
+      query: window.location.search,
     });
   }, []);
 
