@@ -6,11 +6,19 @@ import Video from "next-video";
 import { cn } from "@/utils/cn";
 import { Signup } from "./Signup";
 import { PostSignupModal } from "./PostSignupModal";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { amplitude } from "./AnalyticsProvider";
 const LandingWithVideo = ({ video }: { video: typeof vid }) => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (postSignupModalOpen) {
+      videoRef.current?.pause();
+    }
+  }, [postSignupModalOpen, videoRef.current]);
+
   useEffect(() => {
     amplitude.track("Landing Page viewed", {
       path: window.location.pathname,
@@ -29,7 +37,13 @@ const LandingWithVideo = ({ video }: { video: typeof vid }) => {
         LCA
       </h1> */}
       <div className="w-full md:w-1/2 relative">
-        <Video src={video} autoPlay loop className="w-full h-full mb-24" />
+        <Video
+          src={video}
+          autoPlay
+          loop
+          className="w-full h-full mb-24"
+          ref={videoRef}
+        />
       </div>
       <div className="flex flex-col items-center justify-center gap-4 w-full">
         <div className={cn(advercaseBold.className, "text-xl mt-4 md:mt-6")}>
