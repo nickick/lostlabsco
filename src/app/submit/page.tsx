@@ -28,6 +28,9 @@ const Submit = () => {
             we might use it!
           </HighlightedSpan>
         </p>
+        <div className="flex items-center gap-2">
+          Design inspiration: <span className="text-4xl">🚀</span>
+        </div>
       </div>
       <Canvas />
     </main>
