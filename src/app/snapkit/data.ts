@@ -1,8 +1,9 @@
+import { productName } from "@/utils/constants";
+
 export const stickConfigurations = [
   {
     name: "Folded flat",
-    description:
-      "Folded flat, the LeVlog kit is a compact aluminum attachment at just 7mm thin.",
+    description: `Folded flat, the ${productName} is a compact aluminum attachment at just 7mm thin.`,
     image: "/vlog/renders/flat.png",
   },
   {

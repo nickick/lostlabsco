@@ -6,6 +6,7 @@ import { motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { advercaseBold, hostGroteskRegular } from "../font";
+import { productName } from "@/utils/constants";
 
 function Compact() {
   const ref = useRef(null);
@@ -49,7 +50,7 @@ function Compact() {
         transition={{ duration: 0.5, delay: 0.3 }}
       >
         <p className="text-lg">
-          The LeVlog kit is designed compact so that it can{" "}
+          The {productName} is designed compact so that it can{" "}
           <HighlightedSpan className="text-base">
             stay on your phone
           </HighlightedSpan>{" "}
@@ -76,7 +77,7 @@ function Compact() {
         >
           <Image
             src="/vlog/renders/thin.png"
-            alt="Compact LeVlog Kit"
+            alt={`Compact ${productName}`}
             width={1000}
             height={1000}
             className="w-full h-full object-cover"
@@ -93,7 +94,8 @@ function Compact() {
               7mm thin
             </h3>
             <p className="">
-              We&apos;re using aerospace-grade aluminum to keep the LeVlog kit
+              We&apos;re using aerospace-grade aluminum to keep the{" "}
+              {productName}
               thin and light yet strong. At just 7mm thin, you won&apos;t even
               notice it&apos;s there.
             </p>

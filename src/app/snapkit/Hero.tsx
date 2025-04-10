@@ -10,7 +10,7 @@ import { useState } from "react";
 import { useWindowSize } from "usehooks-ts";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import fullModes from "/videos/full-modes.mp4";
-
+import { productName } from "@/utils/constants";
 function HighlightLink({
   children,
   href,
@@ -36,7 +36,7 @@ function HighlightLink({
   );
 }
 
-function LeVlogHero() {
+function ProductHero() {
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
   const { width } = useWindowSize();
 
@@ -103,7 +103,7 @@ function LeVlogHero() {
                 advercaseBold.className
               )}
             >
-              SnapKit
+              {productName}
             </h1>
             <div className={cn("text-xl", advercaseBold.className)}>
               The all-in-one phone accessory made for creators, travelers, and
@@ -111,15 +111,14 @@ function LeVlogHero() {
             </div>
             <div className={cn("text-xl")}>
               A{" "}
-              <HighlightLink href="/levlog-kit/#versatile">
+              <HighlightLink href="/product/#versatile">
                 versatile
               </HighlightLink>
               ,{" "}
-              <HighlightLink href="/levlog-kit/#customizable">
+              <HighlightLink href="/product/#customizable">
                 customizable
               </HighlightLink>
-              ,{" "}
-              <HighlightLink href="/levlog-kit/#compact">compact</HighlightLink>{" "}
+              , <HighlightLink href="/product/#compact">compact</HighlightLink>{" "}
               phone tripod and accessories kit that lets digital nomads capture
               their adventures.
             </div>
@@ -139,4 +138,4 @@ function LeVlogHero() {
   );
 }
 
-export { LeVlogHero };
+export { ProductHero };

@@ -8,6 +8,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { advercaseBold } from "../font";
 import { insertConfigurations } from "./data";
+import { productName } from "@/utils/constants";
 
 const Customizable = () => {
   const ref = useRef(null);
@@ -38,8 +39,8 @@ const Customizable = () => {
       </motion.h2>
       <div className="flex flex-col items-center justify-center mb-12 px-4 xl:px-0">
         <div className="flex flex-col items-center justify-center gap-8">
-          The LeVlog kit&apos;s modular back case design allows for 4 different
-          useful back accessories.
+          The {productName}&apos;s modular back case design allows for 4
+          different useful back accessories.
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 w-full">
             {insertConfigurations.map((config) => (
               <li key={config.name} className="pb-4">

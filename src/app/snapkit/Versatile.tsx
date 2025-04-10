@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import { stickConfigurations } from "./data";
 import { useWindowSize } from "usehooks-ts";
+import { productName } from "@/utils/constants";
 
 const StickConfig = ({
   config,
@@ -105,7 +106,7 @@ const Versatile = () => {
             phone stand
           </h2>
           <div className="text-lg">
-            The LeVlog kit&apos;s articulated tripod stand allows for{" "}
+            The {productName}&apos;s articulated tripod stand allows for{" "}
             <HighlightedSpan>4 different</HighlightedSpan> use cases.
           </div>
           <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-4 w-full">
