@@ -95,9 +95,8 @@ function Compact() {
             </h3>
             <p className="">
               We&apos;re using aerospace-grade aluminum to keep the{" "}
-              {productName}
-              thin and light yet strong. At just 7mm thin, you won&apos;t even
-              notice it&apos;s there.
+              {productName} thin and light yet strong. At just 7mm thin, you
+              won&apos;t even notice it&apos;s there.
             </p>
           </div>
         </motion.div>
