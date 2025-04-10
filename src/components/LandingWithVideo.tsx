@@ -8,6 +8,8 @@ import { Signup } from "./Signup";
 import { PostSignupModal } from "./PostSignupModal";
 import { useEffect, useRef, useState } from "react";
 import { amplitude } from "./AnalyticsProvider";
+import { SignupFollowUp } from "./SignupFollowUp";
+
 const LandingWithVideo = ({ video }: { video: typeof vid }) => {
   const [hasSubscribed, setHasSubscribed] = useState(false);
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
@@ -68,6 +70,7 @@ const LandingWithVideo = ({ video }: { video: typeof vid }) => {
         open={postSignupModalOpen}
         setOpen={setPostSignupModalOpen}
       />
+      {hasSubscribed && <SignupFollowUp />}
     </div>
   );
 };

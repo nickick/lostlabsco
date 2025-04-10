@@ -28,4 +28,4 @@ const SignupFollowUp = ({ showProductLink }: { showProductLink?: boolean }) => {
   );
 };
 
-export default SignupFollowUp;
+export { SignupFollowUp };

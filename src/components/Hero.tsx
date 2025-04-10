@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { PostSignupModal } from "./PostSignupModal";
 import { Signup } from "./Signup";
-import SignupFollowUp from "./SignupFollowUp";
+import { SignupFollowUp } from "./SignupFollowUp";
 import { HighlightedLink, HighlightedSpan } from "./Text";
 import { TextAnimation } from "./TextAnimation";
 const Hero = () => {
