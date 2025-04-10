@@ -1,25 +1,12 @@
 import { Trackers } from "@/components/analytics/Trackers";
 import { AnalyticsProvider } from "@/components/AnalyticsProvider";
-import { Footer } from "@/components/Footer";
-import { LeavesBackground } from "@/components/LeavesBackground";
-import { Navbar } from "@/components/Navbar";
 import { cn } from "@/utils/cn";
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import { hostGroteskRegular } from "./font";
-import ogImage from "./opengraph-image.jpeg";
 import "./globals.css";
-
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+import ogImage from "./opengraph-image.jpeg";
+import { headers } from "next/headers";
+import { HEADER_KEYS } from "@/utils/headerKeys";
 
 export const metadata: Metadata = {
   title: "Lost Labs",
@@ -49,30 +36,27 @@ export const metadata: Metadata = {
   },
 };
 
+const lightThemePaths = ["/product", "/snapkit"];
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = headers().get(HEADER_KEYS.PATHNAME);
+
+  const isLightTheme = lightThemePaths.includes((pathname ?? "").toLowerCase());
+
   return (
-    <html lang="en">
+    <html lang="en" data-theme={isLightTheme ? "light" : "dark"}>
       <body
         className={cn(
-          geistSans.variable,
-          geistMono.variable,
           hostGroteskRegular.className,
-          "antialiased relative h-full w-full overflow-x-hidden"
+          "antialiased relative h-full w-full overflow-x-hidden bg-background"
         )}
       >
         <Trackers />
-        <div className="w-full h-full relative">
-          <AnalyticsProvider>
-            <LeavesBackground />
-            <Navbar />
-            {children}
-            <Footer />
-          </AnalyticsProvider>
-        </div>
+        <AnalyticsProvider>{children}</AnalyticsProvider>
       </body>
     </html>
   );

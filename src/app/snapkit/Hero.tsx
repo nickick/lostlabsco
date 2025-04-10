@@ -11,6 +11,7 @@ import { useWindowSize } from "usehooks-ts";
 import { advercaseBold, hostGroteskRegular } from "../font";
 import fullModes from "/videos/full-modes.mp4";
 import { productName } from "@/utils/constants";
+import { dropShadow } from "@/utils/dropShadow";
 function HighlightLink({
   children,
   href,
@@ -75,7 +76,7 @@ function ProductHero() {
               playsInline
               controls={false}
             />
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/50 flex items-center justify-center"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 flex items-center justify-center"></div>
             <p className="absolute text-xs bottom-0 left-0 w-full text-center">
               Prototype renders, final designs subject to change.
             </p>
@@ -99,7 +100,8 @@ function ProductHero() {
             <span className={cn("text-xl")}>Introducing the</span>
             <h1
               className={cn(
-                "text-5xl font-bold text-center text-(--accent) drop-shadow-[0_0_2px_var(--accent)]",
+                "text-5xl font-bold text-center dark:text-(--accent)",
+                dropShadow(2),
                 advercaseBold.className
               )}
             >

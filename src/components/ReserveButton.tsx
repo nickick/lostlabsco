@@ -2,6 +2,7 @@
 
 import { cn } from "@/utils/cn";
 import { advercaseRegular } from "@/app/font";
+import { amplitude } from "./AnalyticsProvider";
 
 const shopifyCheckoutLink =
   "https://lostlabs.myshopify.com/cart/45043440255170:1?channel=buy_button";
@@ -15,6 +16,10 @@ const ReserveButton = ({ buttonText = "Reserve" }: { buttonText?: string }) => {
       )}
       id="product-component-1744009081884"
       onClick={() => {
+        amplitude.track("Reserve Button Clicked", {
+          path: window.location.pathname,
+          query: window.location.search,
+        });
         window.open(shopifyCheckoutLink, "_blank");
       }}
     >

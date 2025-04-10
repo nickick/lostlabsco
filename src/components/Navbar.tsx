@@ -8,12 +8,12 @@ const Navbar = () => {
       <div className="px-8">
         <Link
           className={cn(
-            "text-center text-sm text-(--accent)",
+            "text-center text-sm dark:text-(--accent)",
             advercaseBold.className
           )}
           href="/"
         >
-          <span className="font-bold text-2xl drop-shadow-[0_0_1px_var(--accent)] whitespace-nowrap">
+          <span className="font-bold text-2xl dark:drop-shadow-[0_0_1px_var(--accent)] light:drop-shadow-[0_0_1px_rgb(0,0,0)] whitespace-nowrap">
             Lost Labs
           </span>
         </Link>
@@ -27,7 +27,7 @@ const Navbar = () => {
         </Link>
         <Link
           href="/product"
-          className="text-(--accent) hover:text-(--accent)/90 hover:underline transition-colors whitespace-nowrap"
+          className="dark:text-(--accent) light:drop-shadow-[0_0_5px_var(--foreground)] hover:text-(--accent)/90 hover:underline transition-colors whitespace-nowrap"
         >
           Product
         </Link>

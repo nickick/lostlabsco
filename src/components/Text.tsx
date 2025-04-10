@@ -31,7 +31,7 @@ const HighlightedSpan = ({
     <span
       className={cn(
         advercaseRegular.className,
-        "text-(--accent) drop-shadow-[0_0_1px_var(--accent)]",
+        "dark:text-(--accent) dark:drop-shadow-[0_0_1px_var(--accent)]",
         className
       )}
     >
