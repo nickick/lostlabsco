@@ -88,9 +88,9 @@ const Customizable = () => {
         </motion.h2>
         <div className="flex flex-col items-center justify-center mb-12 px-4 xl:px-0">
           <div className="flex flex-col items-center justify-center gap-8">
-            The {productName}&apos;s modular back case design allows for 4
-            different useful back accessories.
-            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12 md:gap-4 w-full">
+            The {productName}&apos;s swappable back case allows you to pick the
+            exact setup for your needs.
+            <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-12 md:gap-4 w-full">
               {insertConfigurations.map((config) => (
                 <CustomizedSection key={config.name} config={config} />
               ))}

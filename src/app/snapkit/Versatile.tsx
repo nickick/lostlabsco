@@ -29,7 +29,7 @@ const StickConfig = ({
       <div className=" bg-white h-full">
         <strong
           className={cn(
-            "sm:hidden block text-2xl md:text-lg md:text-center sm:pt-4 py-4",
+            "sm:hidden block text-2xl md:text-lg md:text-center sm:pt-4 py-4 px-4",
             advercaseBold.className
           )}
         >
@@ -80,7 +80,7 @@ const Versatile = () => {
     <div className="bg-white">
       <motion.div
         className={cn(
-          "w-full max-w-screen-lg mx-auto z-20 px-4 md:px-8",
+          "w-full max-w-screen-lg mx-auto z-20 my-12 md:my-0 px-4 md:px-8",
           hostGroteskRegular.className
         )}
         initial={
@@ -110,7 +110,10 @@ const Versatile = () => {
             </h2>
             <div className="text-lg">
               The {productName}&apos;s tripod stand allows for{" "}
-              <HighlightedSpan>4 different</HighlightedSpan> use cases.
+              <HighlightedSpan className="text-base">
+                4 different
+              </HighlightedSpan>{" "}
+              use cases.
             </div>
             <ul className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-4 w-full">
               {stickConfigurations.map((config, index) => (

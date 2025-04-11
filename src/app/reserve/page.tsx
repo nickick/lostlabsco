@@ -16,7 +16,7 @@ export default function Reserve() {
           >
             Reserve your spot
           </h1>
-          <p>For $20, you can reserve your spot:</p>
+          <p>Reserve your spot:</p>
           <div className="flex flex-col items-center justify-center">
             <ReserveButton buttonText="Reserve now" />
           </div>

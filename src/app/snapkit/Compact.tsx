@@ -24,7 +24,7 @@ function Compact() {
       <motion.div
         ref={ref}
         className={cn(
-          "flex flex-col items-center justify-center gap-4 w-full max-w-screen-lg md:mx-auto px-8 relative z-20 md:py-24",
+          "flex flex-col items-center justify-center gap-4 w-full max-w-screen-lg md:mx-auto px-8 relative z-20 py-24",
           hostGroteskRegular.className
         )}
         id="compact"

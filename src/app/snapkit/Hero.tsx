@@ -82,7 +82,7 @@ function ProductHero() {
                   : { opacity: 1, x: 0, y: 0 }
               }
               transition={{ duration: 1, ease: "easeInOut" }}
-              className="w-full md:w-1/2 relative flex flex-col justify-end md:mt-0 h-full bg-white rounded-l-lg overflow-hidden"
+              className="w-full md:w-1/2 relative flex flex-col justify-end md:mt-0 h-full bg-white md:rounded-l-lg overflow-hidden"
               style={{
                 boxShadow: "0 0 10px 0px var(--background)",
               }}
@@ -118,7 +118,7 @@ function ProductHero() {
                 ease: "easeInOut",
                 delay: isMobile ? 0.3 : 0,
               }}
-              className="w-full md:w-1/2 px-8 md:px-0 pl-12 bg-accent md:h-[24rem] rounded-r-lg"
+              className="w-full md:w-1/2 px-8 md:px-0 pl-12 bg-accent md:h-[24rem] md:rounded-r-lg"
               style={{
                 boxShadow: "0 10px 10px -4px rgba(0, 0, 0, 0.4)",
               }}
@@ -168,7 +168,7 @@ function ProductHero() {
             className="w-full"
           >
             <div
-              className="flex flex-col items-center justify-center gap-0 py-8 mb-12 md:mb-0 w-full md:rounded-lg md:w-1/2 md:max-w-[24rem] mx-auto bg-accent text-white drop-shadow-lg"
+              className="flex flex-col items-center justify-center gap-0 py-8 md:mb-0 w-full md:rounded-lg md:w-1/2 md:max-w-[32rem] mx-auto bg-accent text-white drop-shadow-lg px-8"
               style={{
                 boxShadow: "0px 10px 10px -4px rgba(0, 0, 0, 0.4)",
               }}

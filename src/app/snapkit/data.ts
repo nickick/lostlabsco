@@ -26,7 +26,14 @@ export const stickConfigurations = [
 
 export const insertConfigurations = [
   {
-    name: "LCD screen",
+    name: "SnapWallet",
+    description:
+      "Coming with the Snapstand, SnapWallet holds your cards, cash, and IDs in an ultra slim design.",
+    image: "/vlog/renders/modular.png",
+    status: "ready at launch",
+  },
+  {
+    name: "SnapScreen",
     description:
       "See your back camera's framing on the back-mounted LCD screen.",
     image: "/vlog/renders/modular.png",
@@ -48,6 +55,12 @@ export const insertConfigurations = [
   {
     name: "SD card",
     description: "Edit photos and videos directly on your phone.",
+    image: "/vlog/renders/modular.png",
+    status: "coming soon",
+  },
+  {
+    name: "More to come",
+    description: "We're creating even more accessories for SnapKit!",
     image: "/vlog/renders/modular.png",
     status: "coming soon",
   },
