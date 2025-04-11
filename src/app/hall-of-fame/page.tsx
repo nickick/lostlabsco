@@ -35,8 +35,8 @@ export default function HallOfFame() {
             </span>
           </h1>
           <p className="text-center text-lg">
-            We're proud to showcase the first 200 customers who supported Lost
-            Labs.
+            We&apos;re proud to showcase the first 200 customers who supported
+            Lost Labs.
           </p>
           <p className="text-center text-3xl">Coming soon!</p>
         </div>
