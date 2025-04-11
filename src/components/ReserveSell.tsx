@@ -6,7 +6,8 @@ const ReserveSell = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-2">
       <h2 className={cn("text-center text-2xl", advercaseBold.className)}>
-        Launching <span className="text-black tracking-wider">May 2025</span>
+        Launching <span className="text-black tracking-wider">May 2025</span>{" "}
+        for <span className="text-black tracking-wider">$79</span>
       </h2>
       <p className="w-full md:w-3/4 mx-auto">
         Want to{" "}
