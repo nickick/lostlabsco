@@ -5,7 +5,12 @@ import ReserveButton from "./ReserveButton";
 const ReserveSell = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-2">
-      <h2 className={cn("text-center text-2xl", advercaseBold.className)}>
+      <h2
+        className={cn(
+          "md:text-center text-2xl w-full",
+          advercaseBold.className
+        )}
+      >
         Launching <span className="text-black tracking-wider">May 2025</span>{" "}
         for <span className="text-black tracking-wider">$79</span>
       </h2>
@@ -21,7 +26,9 @@ const ReserveSell = () => {
             Reservations will hold your SnapKit and also be used towards
             purchase.
           </p>
-          <div className="md:w-3/4 mx-auto">Reserve now to also get:</div>
+          <div className="w-full md:w-3/4 mx-auto">
+            Reserve now to also get:
+          </div>
           <ul className="list-disc list-inside">
             <li>
               A <span className="text-white"> custom engraving</span>{" "}

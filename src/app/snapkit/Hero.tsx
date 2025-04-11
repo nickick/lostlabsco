@@ -118,7 +118,7 @@ function ProductHero() {
                 ease: "easeInOut",
                 delay: isMobile ? 0.3 : 0,
               }}
-              className="w-full md:w-1/2 px-8 md:px-0 pl-12 bg-accent md:h-[24rem] md:rounded-r-lg"
+              className="w-full md:w-1/2 px-8 md:px-0 md:pl-12 bg-accent md:h-[24rem] md:rounded-r-lg"
               style={{
                 boxShadow: "0 10px 10px -4px rgba(0, 0, 0, 0.4)",
               }}
