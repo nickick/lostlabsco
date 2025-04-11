@@ -16,7 +16,7 @@ const Footer = () => {
         Made with{" "}
         <Link
           href="https://www.yesand.tech"
-          className="underline cursor-pointer drop-shadow-[0_0_1px_rgb(255,255,255))] hover:text-white/90 transition-all"
+          className="underline cursor-pointer drop-shadow-[0_0_1px_rgb(255,255,255))] light:hover:text-black/70 light:hover:drop-shadow-md dark:hover:text-white/90 transition-all"
           target="_blank"
         >
           YesAnd Technologies

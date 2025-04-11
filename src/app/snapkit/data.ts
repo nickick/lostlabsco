@@ -3,7 +3,7 @@ import { productName } from "@/utils/constants";
 export const stickConfigurations = [
   {
     name: "Folded flat",
-    description: `Folded flat, the ${productName} is a compact aluminum attachment at just 7mm thin.`,
+    description: `The ${productName} folds flat into a compact aluminum attachment at 7mm thin.`,
     image: "/vlog/renders/flat.png",
   },
   {
@@ -33,9 +33,9 @@ export const insertConfigurations = [
     status: "ready at launch",
   },
   {
-    name: "Magsafe battery",
+    name: "MagSafe battery",
     description:
-      "Add a Magsafe battery to your phone to power your phone and accessories.",
+      "Add a MagSafe compatible battery to your phone for extra juice.",
     image: "/vlog/renders/modular.png",
     status: "coming soon",
   },

@@ -2,6 +2,8 @@
 
 @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
 
+@custom-variant light (&:where([data-theme=light], [data-theme=light] *));
+
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
   so we've added these compatibility styles to make sure everything still
@@ -13,26 +15,22 @@
 @layer base {
   [data-theme="dark"] {
     --background: #0a0a0a;
+    --background-mid: #1a1a1a;
     --foreground: #ededed;
     --accent: #ffd804;
+    --accent-dark: #c0a084;
     --green: #4e6d53;
-
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-accent: var(--accent);
-    --color-green: var(--green);
+    --sky: #8ccaf2;
   }
 
   [data-theme="light"] {
-    --background: #ededed;
+    --background: #ffffff;
+    --background-mid: #f3ede8;
     --foreground: #0a0a0a;
-    --accent: #ffd804;
+    --accent: #e49b6a;
+    --accent-dark: #896a4a;
     --green: #4e6d53;
-
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
-    --color-accent: var(--accent);
-    --color-green: var(--green);
+    --sky: #8ccaf2;
   }
 
   *,
@@ -48,6 +46,16 @@
     background: var(--background);
     font-family: var(--font-host-grotesk-regular), Arial, Helvetica, sans-serif;
   }
+}
+
+@theme {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
+  --color-background-mid: var(--background-mid);
+  --color-green: var(--green);
+  --color-sky: var(--sky);
 }
 
 @utility text-balance {

@@ -11,7 +11,7 @@ const ReserveButton = ({ buttonText = "Reserve" }: { buttonText?: string }) => {
   return (
     <button
       className={cn(
-        "bg-(--accent) text-black px-4 py-2 rounded-md mt-10 cursor-pointer hover:bg-(--accent)/90 hover:drop-shadow-[0_0_4px_var(--accent)] transition-colors duration-300",
+        "bg-accent drop-shadow-md hover:light:drop-shadow-xl light:bg-white light:text-black dark:text-black px-4 py-2 rounded-md cursor-pointer hover:light:bg-background-mid hover:bg-accent/90 hover:drop-shadow-[0_0_4px_var(--accent)] transition-colors duration-300",
         advercaseRegular.className
       )}
       id="product-component-1744009081884"

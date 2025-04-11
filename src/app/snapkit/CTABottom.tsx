@@ -1,6 +1,5 @@
 "use client";
 
-import { LeavesBackground } from "@/components/LeavesBackground";
 import { PostSignupModal } from "@/components/PostSignupModal";
 import { ReserveSell } from "@/components/ReserveSell";
 import { motion } from "framer-motion";
@@ -10,7 +9,7 @@ const CTABottom = () => {
   const [postSignupModalOpen, setPostSignupModalOpen] = useState(false);
 
   return (
-    <>
+    <div className="bg-accent text-white">
       <PostSignupModal
         open={postSignupModalOpen}
         setOpen={setPostSignupModalOpen}
@@ -21,12 +20,11 @@ const CTABottom = () => {
         transition={{ duration: 1, ease: "easeInOut", delay: 1 }}
         className="relative"
       >
-        <LeavesBackground className="max-h-[70svh]" />
-        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-36 z-20 relative">
+        <div className="flex flex-col items-center justify-center gap-4 mt-6 md:mt-12 pb-12 z-20 relative">
           <ReserveSell />
         </div>
       </motion.div>
-    </>
+    </div>
   );
 };
 

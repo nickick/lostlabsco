@@ -7,7 +7,7 @@ import NavbarFooter from "@/components/Layouts/NavbarFooter";
 export default function Product() {
   return (
     <NavbarFooter theme="light">
-      <div className="flex flex-col gap-12">
+      <div className="flex flex-col">
         <ProductHero />
         <Versatile />
         <Customizable />

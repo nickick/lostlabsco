@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { WAQRCodeChip } from "./WAQRCodeChip";
 
 const SignupFollowUp = ({ showProductLink }: { showProductLink?: boolean }) => {
@@ -7,22 +6,22 @@ const SignupFollowUp = ({ showProductLink }: { showProductLink?: boolean }) => {
       <WAQRCodeChip />
       <div className="pt-4">
         Want to{" "}
-        <Link
+        <a
           href="/submit"
           target="_blank"
           className="underline text-(--accent) hover:text-(--accent)/90 transition-colors duration-300"
         >
           design a logo
-        </Link>{" "}
+        </a>{" "}
         with us next?
       </div>
       {showProductLink && (
-        <Link
+        <a
           href="/product"
           className="underline text-(--accent) hover:text-(--accent)/90 transition-colors duration-300 mt-8"
         >
           Check out our product!
-        </Link>
+        </a>
       )}
     </div>
   );

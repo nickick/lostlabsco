@@ -1,3 +1,3 @@
 export const dropShadow = (radius: number) => {
-  return `dark:text-(--accent) dark:drop-shadow-[0_0_${radius}px_var(--accent)] light:drop-shadow-[0_0_${radius}px_var(--accent)] light:text-(--foreground)`;
+  return `text-(--accent) drop-shadow-[0_2px_${radius}px_rgb(0,0,0)] dark:drop-shadow-[0_0_${radius}px_var(--accent)]`;
 };
