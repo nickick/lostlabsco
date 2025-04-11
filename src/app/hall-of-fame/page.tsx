@@ -1,3 +1,5 @@
+"use client";
+
 import ReserveButton from "@/components/ReserveButton";
 import { cn } from "@/utils/cn";
 import { advercaseBold, advercaseRegular } from "../font";

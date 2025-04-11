@@ -6,16 +6,25 @@ import { useWindowSize } from "usehooks-ts";
 
 export const Trackers = () => {
   useEffect(() => {
-    amplitude.track("Page Viewed", {
-      path: window.location.pathname,
-    });
+    try {
+      amplitude.track("Page Viewed", {
+        path: window.location.pathname,
+      });
+    } catch (error) {
+      console.warn("Failed to track page view:", error);
+    }
   }, []);
+
   const { width } = useWindowSize();
 
   useEffect(() => {
-    amplitude.track("Window Size", {
-      width,
-    });
+    try {
+      amplitude.track("Window Size", {
+        width,
+      });
+    } catch (error) {
+      console.warn("Failed to track window size:", error);
+    }
   }, [width]);
 
   return null;

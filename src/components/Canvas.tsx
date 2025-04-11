@@ -1,3 +1,5 @@
+"use client";
+
 import { Trash, Undo, Send, BrushIcon } from "lucide-react";
 import { Component, useRef, useState } from "react";
 import CanvasDraw from "react-canvas-draw";
